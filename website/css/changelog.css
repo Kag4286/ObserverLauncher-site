@@ -1,0 +1,57 @@
+/* changelog.css — the /changelog page. Reuses site tokens; adds a release timeline with a sticky
+   version index, skeleton loading, and scroll reveals. */
+
+.sub-head{transform:none}
+.site-head .brand-mark img{width:22px;height:22px;object-fit:contain;display:block}
+.cl-main{max-width:1080px;margin:0 auto;padding:120px clamp(16px,4vw,40px) 80px;position:relative;z-index:1}
+.cl-head{margin-bottom:40px}
+.cl-head h1{font-size:clamp(32px,5vw,52px);letter-spacing:-.03em;margin:14px 0 12px;font-weight:700}
+.cl-sub{color:var(--text-dim);font-size:15.5px;max-width:560px}
+
+.cl-wrap{display:grid;grid-template-columns:160px minmax(0,1fr);gap:40px;align-items:start}
+
+/* sticky version index */
+.cl-side{position:sticky;top:96px;padding-top:6px}
+.cl-side-label{font:700 10px var(--font-mono);letter-spacing:.16em;color:var(--text-dim);text-transform:uppercase;margin-bottom:14px}
+.cl-index{display:flex;flex-direction:column;gap:2px}
+.cl-index a{font:600 13px var(--font-mono);color:var(--text-dim);padding:5px 10px;border-left:2px solid var(--border);transition:color var(--dur-fast),border-color var(--dur-fast),background var(--dur-fast)}
+.cl-index a:hover{color:var(--text);background:var(--panel)}
+.cl-index a.active{color:var(--accent);border-left-color:var(--accent);background:var(--panel)}
+
+.cl-body{position:relative;min-width:0}
+.cl-body::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:var(--border)}
+
+/* release reveal */
+.cl-release{position:relative;padding:0 0 46px 40px;opacity:0;transform:translateY(22px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.cl-release.in{opacity:1;transform:none}
+.cl-release::before{content:'';position:absolute;left:0;top:5px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--border-strong);transition:border-color var(--dur-fast),box-shadow var(--dur-fast)}
+.cl-release:hover::before{border-color:var(--accent);box-shadow:0 0 12px var(--accent-glow)}
+.cl-release:first-child::before{border-color:var(--accent);box-shadow:0 0 12px var(--accent-glow)}
+.cl-release-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.cl-ver{font:700 22px var(--font-mono);letter-spacing:-.01em;color:var(--text)}
+.cl-ver.latest{color:var(--accent);text-shadow:0 0 20px var(--accent-weak)}
+.cl-date{font:600 11px var(--font-mono);letter-spacing:.08em;color:var(--text-dim);border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+.cl-latest-tag{font:700 9px var(--font-mono);letter-spacing:.12em;color:var(--accent-ink);background:var(--accent);border-radius:999px;padding:3px 9px}
+.cl-summary{font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:18px;max-width:680px}
+.cl-sec{margin:16px 0}
+.cl-sec h4{font:700 11px var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.cl-sec ul{display:flex;flex-direction:column;gap:8px}
+.cl-sec li{position:relative;padding-left:18px;font-size:13.5px;color:var(--text-dim);line-height:1.65}
+.cl-sec li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:1px;background:var(--border-strong);transform:rotate(45deg)}
+.cl-sec li b{color:var(--text);font-weight:600}
+.cl-sec li code{color:var(--accent);font-family:var(--font-mono);font-size:12.5px;background:var(--accent-weak);padding:1px 5px;border-radius:2px}
+.cl-err{padding:24px;border:1px solid var(--border);border-radius:var(--r);background:var(--panel);color:var(--text-dim);font-size:14px}
+.cl-err a{color:var(--accent)}
+
+/* skeleton loading */
+.cl-skel{padding:0 0 46px 40px;position:relative}
+.cl-skel-head{display:flex;gap:14px;margin-bottom:16px}
+.cl-skel-bar,.cl-skel-line{display:block;height:12px;border-radius:3px;background:linear-gradient(90deg,var(--panel),var(--panel-hover),var(--panel));background-size:200% 100%;animation:shimmer 1.4s linear infinite}
+.cl-skel-bar.w40{width:120px;height:22px} .cl-skel-bar.w20{width:80px;height:14px;align-self:center}
+.cl-skel-line{height:11px;margin-bottom:9px}
+.w90{width:90%} .w70{width:70%}
+@keyframes shimmer{from{background-position:200% 0}to{background-position:-200% 0}}
+
+@media(max-width:900px){.cl-wrap{grid-template-columns:1fr;gap:0}.cl-side{display:none}}
+@media(max-width:600px){.cl-release{padding-left:30px}.cl-body::before{left:5px}}
+@media (prefers-reduced-motion:reduce){.cl-release{opacity:1;transform:none}.cl-skel-bar,.cl-skel-line{animation:none}}
