@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog — ObserverLauncher</title>
+<meta name="description" content="Release history for ObserverLauncher, straight from the developer changelog.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/site.css">
+<link rel="stylesheet" href="./css/changelog.css">
+</head>
+<body>
+
+<div class="scanline" aria-hidden="true"></div>
+
+<header class="site-head sub-head">
+  <a class="brand" href="./index.html">
+    <span class="brand-mark" aria-hidden="true"><img src="./assets/shots/icon.png" alt=""></span>
+    <span class="brand-text"><b>ObserverLauncher</b></span>
+  </a>
+  <nav class="site-nav" aria-label="Sections">
+    <a href="./index.html" data-i18n="nav.back">Home</a>
+    <a href="https://github.com/Kag4286/ObserverLauncher" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+  <div class="head-actions">
+    <div class="lang" id="lang">
+      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+        <span id="langCurrent">EN</span>
+        <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <ul class="lang-menu" id="langMenu" role="listbox" hidden></ul>
+    </div>
+    <a class="btn primary" href="https://github.com/Kag4286/ObserverLauncher/releases/latest" target="_blank" rel="noopener" data-i18n="cta.download">Download</a>
+  </div>
+</header>
+
+<main class="cl-main">
+  <div class="cl-head">
+    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="cl.eyebrow">RELEASE HISTORY</span></p>
+    <h1 data-i18n="cl.title">Changelog</h1>
+    <p class="cl-sub" data-i18n="cl.sub">Every release, straight from the developer changelog. Loaded live from the repository.</p>
+  </div>
+  <div class="cl-wrap">
+    <aside class="cl-side" hidden>
+      <p class="cl-side-label" data-i18n="cl.versions">VERSIONS</p>
+      <div class="cl-index" id="clIndex"></div>
+    </aside>
+    <div class="cl-body" id="clBody"></div>
+  </div>
+</main>
+
+<footer class="site-foot">
+  <div class="foot-legal">
+    <p data-i18n="foot.disclaimer">ObserverLauncher is an unofficial tool, not affiliated with, endorsed by, or associated with Mojang, Microsoft, or any server-software project. Minecraft is a trademark of Mojang Synergies AB.</p>
+  </div>
+</footer>
+
+<script src="./js/i18n.js"></script>
+<script src="./js/changelog.js"></script>
+</body>
+</html>
