@@ -64,16 +64,24 @@
 
   gl.enable(gl.BLEND); gl.blendFunc(gl.ONE,gl.ONE_MINUS_SRC_ALPHA); gl.clearColor(0,0,0,0);
 
-  let mx=0.5,my=0.5,tx=0.5,ty=0.5,w=0,h=0,dpr=Math.min(devicePixelRatio||1,1.75);
+  // PERF (mobile): a coarse pointer + small screen means a phone/tablet. Cap the backing-store DPR
+  // hard (fill-rate is the bottleneck for a full-screen fragment shader) and throttle the frame
+  // rate so the GPU does not run flat-out behind the content.
+  const coarse=matchMedia('(hover: none) and (pointer: coarse)').matches;
+  const mobile=coarse||innerWidth<820;
+  const targetFps=mobile?30:0; // 0 = uncapped (vsync)
+  let mx=0.5,my=0.5,tx=0.5,ty=0.5,w=0,h=0,dpr=mobile?Math.min(devicePixelRatio||1,1):Math.min(devicePixelRatio||1,1.75);
   function resize(){ w=cv.clientWidth; h=cv.clientHeight; cv.width=Math.max(1,Math.floor(w*dpr)); cv.height=Math.max(1,Math.floor(h*dpr)); gl.viewport(0,0,cv.width,cv.height); gl.uniform2f(uRes,cv.width,cv.height); }
   addEventListener('resize',resize); resize();
   addEventListener('pointermove',e=>{ tx=e.clientX/innerWidth; ty=1-e.clientY/innerHeight; },{passive:true});
   let intensity=0.5;
   addEventListener('scroll',()=>{ const p=Math.min(1,scrollY/Math.max(1,innerHeight)); intensity=0.5+p*0.3; },{passive:true});
 
-  let start=performance.now(), raf=0;
+  let start=performance.now(), raf=0, lastDraw=0, frameGap=targetFps?1000/targetFps:0;
   function draw(t){ gl.uniform1f(uTime,t); gl.uniform2f(uMouse,mx,my); gl.uniform1f(uInt,intensity); gl.clear(gl.COLOR_BUFFER_BIT); gl.drawArrays(gl.TRIANGLES,0,6); }
-  function frame(now){ const t=(now-start)/1000; mx+=(tx-mx)*0.05; my+=(ty-my)*0.05; draw(t); raf=requestAnimationFrame(frame); }
+  function frame(now){ const t=(now-start)/1000; mx+=(tx-mx)*0.05; my+=(ty-my)*0.05;
+    if(!frameGap || now-lastDraw>=frameGap){ lastDraw=now; draw(t); }
+    raf=requestAnimationFrame(frame); }
 
   if(reduce){ draw(1.0); cv.dataset.on='1'; return; }
   document.addEventListener('visibilitychange',()=>{ if(document.hidden){ cancelAnimationFrame(raf); raf=0; } else if(!raf){ start=performance.now()-1; raf=requestAnimationFrame(frame); } });

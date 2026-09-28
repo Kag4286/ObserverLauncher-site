@@ -44,7 +44,7 @@
     if(!sections.length) return;
     list.innerHTML=sections.map(s=>`<li data-target="${s.id}" data-name="${s.dataset.name||s.dataset.ch}"><span class="rl-name">${s.dataset.name||('CH '+s.dataset.ch)}</span><span class="rl-bar"></span></li>`).join('');
     const items=$$('#railList li');
-    items.forEach(li=>li.addEventListener('click',()=>{ const el=document.getElementById(li.dataset.target); if(el) el.scrollIntoView({behavior:'smooth',block:'start'}); }));
+    items.forEach(li=>li.addEventListener('click',()=>{ const el=document.getElementById(li.dataset.target); if(el) el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'}); }));
     const total=String(sections.length).padStart(2,'0');
     const io=new IntersectionObserver(entries=>{
       entries.forEach(e=>{
@@ -190,18 +190,13 @@
     document.addEventListener('keydown',e=>{ if(e.key==='Escape') setOpen(false); });
   })();
 
-  // ---------- VIEW TRANSITIONS on in-page nav ----------
-  (function(){
-    if(!document.startViewTransition||reduce) return;
-    $$('a[href^="#"]').forEach(a=>{
-      a.addEventListener('click',e=>{
-        const id=a.getAttribute('href').slice(1); if(!id) return;
-        const el=document.getElementById(id); if(!el) return;
-        e.preventDefault();
-        document.startViewTransition(()=>{ el.scrollIntoView({behavior:'auto',block:'start'}); });
-      });
-    });
-  })();
+  // ---------- SMOOTH SCROLL on in-page nav ----------
+  // NOTE: this block used to intercept every anchor click and call startViewTransition() +
+  // scrollIntoView({behavior:'auto'}). 'auto' JUMPS instantly, which defeated the CSS
+  // html{scroll-behavior:smooth} and made nav feel abrupt. Native smooth scrolling is smoother and
+  // simpler, so the interception is gone; scroll-padding-top (CSS) keeps anchors clear of the fixed
+  // header, and prefers-reduced-motion still falls back to instant via the CSS media query.
+  // (View Transitions are still used for the language switch in i18n.js.)
 
   // ---------- HERO APP 3D TILT ----------
   (function(){

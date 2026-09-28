@@ -52,7 +52,7 @@
   const SHOTS=[['overview','shot.overview'],['console','shot.console'],['players','shot.players'],['inspector','shot.inspector'],['performance','shot.performance'],['content','shot.content'],['marketplace','shot.marketplace'],['worlds','shot.worlds'],['worldmap','shot.worldmap'],['editor','shot.editor']];
   (function(){
     const grid=$('#shotsGrid'); if(!grid) return;
-    grid.innerHTML=SHOTS.map(([file,key],i)=>`<figure class="shot" data-parallax="${(i%2? -1:1)}"><div class="shot-frame"><img src="./assets/shots/${file}.png" alt="" loading="lazy" decoding="async"></div><figcaption data-i18n="${key}"></figcaption></figure>`).join('');
+    grid.innerHTML=SHOTS.map(([file,key],i)=>`<figure class="shot" data-parallax="${(i%2? -1:1)}"><div class="shot-frame"><img src="./assets/shots/${file}.png" alt="ObserverLauncher ${file} screen" loading="lazy" decoding="async"></div><figcaption><b data-i18n="${key}"></b><span data-i18n="shotd.${file}"></span></figcaption></figure>`).join('');
   })();
 
   // ---------- requirements table ----------
@@ -72,7 +72,7 @@
   // ---------- limitations list ----------
   (function(){
     const box=$('#limitsList'); if(!box) return;
-    box.innerHTML=[1,2,3,4,5,6].map(n=>`<li><span class="lim-dot"></span><span data-i18n="lim.${n}"></span></li>`).join('');
+    box.innerHTML=[1,2,3,4,5,6,7,8].map(n=>`<li><span class="lim-dot"></span><span data-i18n="lim.${n}"></span></li>`).join('');
   })();
 
   // ---------- console demo (typewriter, starts on scroll-in) ----------

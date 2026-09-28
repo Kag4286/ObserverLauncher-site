@@ -1,0 +1,10 @@
+# ZeroRender agent scratch (todos, session logs) — not part of the site
+.agent/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
