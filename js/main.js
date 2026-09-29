@@ -26,11 +26,14 @@
     map:'<path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/>',
     console:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/>',
     multi:'<rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/>',
+    cli:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3"/><path d="M12.5 15h4"/>',
+    docker:'<path d="M3 9h14a1 1 0 011 1v3a7 7 0 01-7 7H6a3 3 0 01-3-3z"/><path d="M18 10a3 3 0 013 3"/><rect x="5" y="5" width="2.5" height="2.5" rx=".4"/><rect x="8.5" y="5" width="2.5" height="2.5" rx=".4"/><rect x="12" y="5" width="2.5" height="2.5" rx=".4"/><rect x="8.5" y="1.5" width="2.5" height="2.5" rx=".4"/>',
   };
   const FEATURES=[
     ['setup','feat.setup','feat.setupD'],['monitor','feat.monitor','feat.monitorD'],['players','feat.players','feat.playersD'],
     ['market','feat.market','feat.marketD'],['editor','feat.editor','feat.editorD'],['backup','feat.backup','feat.backupD'],
     ['map','feat.map','feat.mapD'],['console','feat.console','feat.consoleD'],['multi','feat.multi','feat.multiD'],
+    ['cli','feat.headless','feat.headlessD'],['docker','feat.docker','feat.dockerD'],
   ];
   (function(){
     const grid=$('#featGrid'); if(!grid) return;
