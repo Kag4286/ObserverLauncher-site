@@ -14,21 +14,38 @@
       .replace(/`([^`]+)`/g,'<code>$1</code>');
   }
 
+  // Parse the CHANGELOG markdown into releases -> sections -> items.
+  //
+  // BUGFIX: the old version pushed each top-level bullet as a SINGLE line and dropped any wrapped
+  // continuation line (bullets here wrap across 2-5 lines) and any sub-bullet / paragraph after a
+  // `###` heading — so the site showed truncated, half-missing entries. This version accumulates a
+  // bullet's continuation lines (indented or wrapped) into the SAME item, keeps sub-bullets, and
+  // preserves a leading paragraph in each section.
   function parse(md){
     const lines=md.split(/\r?\n/);
-    const releases=[]; let cur=null; let mode=null;
-    const push=()=>{ if(cur) releases.push(cur); };
+    const releases=[];
+    let cur=null, sec=null, item=null;
+    const flushItem=()=>{ if(item!==null){ (sec?sec.items:cur.summary).push(item); item=null; } };
+    const push=()=>{ flushItem(); if(cur) releases.push(cur); };
     for(const raw of lines){
       const line=raw.replace(/\s+$/,'');
-      let m=line.match(/^##\s*\[([^\]]+)\](?:\s*[—-]\s*(.+))?/);
-      if(m){ push(); cur={ver:m[1],date:(m[2]||'').trim(),summary:[],secs:[],sec:null}; mode='release'; continue; }
+      // New release: `## [3.1.0] — 2026-09-29`
+      let m=line.match(/^##\s*\[([^\]]+)\](?:\s*[—–-]\s*(.+))?/);
+      if(m){ push(); cur={ver:m[1],date:(m[2]||'').trim(),summary:[],secs:[],sec:null}; sec=null; item=null; continue; }
       if(!cur) continue;
+      // New section: `### Added`
       let h=line.match(/^###\s+(.+)/);
-      if(h){ cur.sec={title:h[1].trim(),items:[]}; cur.secs.push(cur.sec); mode='sec'; continue; }
-      let b=line.match(/^[-*]\s+(.+)/);
-      if(b){ if(cur.sec) cur.sec.items.push(b[1]); else cur.summary.push(b[1]); continue; }
-      if(!line.trim()) continue;
-      if(mode==='release') cur.summary.push(line.trim());
+      if(h){ flushItem(); sec={title:h[1].trim(),items:[]}; cur.secs.push(sec); continue; }
+      // Bullet (top-level or sub-bullet): starts with optional indent then - / *
+      let b=line.match(/^\s*[-*]\s+(.+)/);
+      if(b){ flushItem(); item=b[1]; continue; }
+      // Continuation of the current bullet: an indented/wrapped line. Append so the full text survives.
+      if(item!==null && /^\s+\S/.test(line)){ item+=' '+line.trim(); continue; }
+      // Blank line ends the current bullet.
+      if(!line.trim()){ flushItem(); continue; }
+      // A plain paragraph. Before any section it is the release lead; inside a section it is a note.
+      flushItem();
+      if(sec) sec.items.push(line.trim()); else cur.summary.push(line.trim());
     }
     push();
     return releases;
