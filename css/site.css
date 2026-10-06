@@ -188,8 +188,8 @@ body.booted .hero-app{opacity:1;transform:none}
 .hero-app-frame img{display:block;width:100%;height:auto;opacity:.94}
 .hero-app-front{position:relative;top:0;left:0;z-index:2;transform:rotateY(-13deg) rotateX(5deg) rotateZ(-1deg)}
 /* back frame peeks up-left behind the front one */
-.hero-app-back{position:absolute;top:0;left:0;z-index:1;width:100%;opacity:.9;
-  transform:translate(-40px,-34px) rotateY(-16deg) rotateX(6deg) rotateZ(-3deg) scale(.97);filter:brightness(.72)}
+.hero-app-back{position:absolute;top:0;left:0;z-index:1;width:100%;opacity:1;
+  transform:translate(-64px,-52px) rotateY(-16deg) rotateX(6deg) rotateZ(-3deg) scale(.94);filter:brightness(.9)}
 .hero-app-bar{display:flex;align-items:center;gap:6px;padding:9px 13px;background:var(--panel);border-bottom:1px solid var(--border)}
 .ha-dot{width:9px;height:9px;border-radius:50%;background:var(--border-strong)}
 .ha-title{margin-left:8px;font:600 11px var(--font-mono);color:var(--text-dim)}
@@ -338,8 +338,10 @@ body.booted .choreo[data-choreo="5"]{transition-delay:.70s}
     .band-head,.intro-grid,.ai-inner,.privacy-grid,.dl-inner,.instrument{
       animation:reveal linear both;animation-timeline:view();animation-range:entry 6% cover 26%;
     }
-    .feat-grid,.soft-grid{animation:clipIn linear both;animation-timeline:view();animation-range:entry 4% cover 30%}
-    .feat-card,.soft-card{animation:cellIn linear both;animation-timeline:view();animation-range:entry 4% cover 34%}
+    .feat-grid,.soft-grid{animation:clipIn linear both;animation-timeline:view();animation-range:entry 4% entry 80%}
+    /* cards finish revealing well within the entry range so a lone trailing card (13th) never
+       stalls at low opacity when it enters late. */
+    .feat-card,.soft-card{animation:cellIn linear both;animation-timeline:view();animation-range:entry 2% entry 70%}
   }
 }
 @keyframes reveal{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
