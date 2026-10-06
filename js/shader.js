@@ -43,7 +43,7 @@
       // slow horizontal sweep
       float sweep=exp(-pow((fract(uv.y*0.5 - u_time*0.015)-0.5)*6.0,2.0))*0.10;
       float n=noise(uv*3.0+u_time*0.03)*0.045;
-      vec3 color=vec3(0.0,0.898,1.0);
+      vec3 color=vec3(0.133,0.773,0.369); // emerald #22C55E
       float a=(glow+glow2)*u_intensity*0.78 + grid*mask*0.04*u_intensity + (streak+sweep+n)*u_intensity*0.7;
       gl_FragColor=vec4(color*a, a*0.8);
     }`;

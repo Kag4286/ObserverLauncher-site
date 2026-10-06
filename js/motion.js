@@ -125,30 +125,6 @@
     heads.forEach(h=>io.observe(h));
   })();
 
-  // ---------- SCREENSHOT TILT + PARALLAX ----------
-  (function(){
-    if(reduce||matchMedia('(hover: none)').matches) return;
-    const frames=$$('.shot-frame');
-    frames.forEach(fr=>{
-      fr.addEventListener('pointermove',e=>{ const r=fr.getBoundingClientRect(); const px=(e.clientX-r.left)/r.width-0.5; const py=(e.clientY-r.top)/r.height-0.5; fr.style.transform=`perspective(900px) rotateY(${px*7}deg) rotateX(${-py*7}deg) scale(1.015)`; });
-      fr.addEventListener('pointerleave',()=>{ fr.style.transform=''; });
-    });
-    // parallax on scroll. PERF: only touch shots whose section is near the viewport (a Set of
-    // visible .shot elements, kept by one IntersectionObserver) instead of measuring every shot
-    // on every scroll frame. getBoundingClientRect on 10 lazy images per frame is layout thrash.
-    const shots=$$('.shot');
-    const visible=new Set();
-    if('IntersectionObserver' in window){
-      const io=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting) visible.add(e.target); else visible.delete(e.target); }); },{rootMargin:'25% 0px 25% 0px'});
-      shots.forEach(s=>io.observe(s));
-    } else shots.forEach(s=>visible.add(s));
-    let raf=0;
-    function upd(){ raf=0; if(!visible.size) return; const vh=innerHeight;
-      visible.forEach(s=>{ const r=s.getBoundingClientRect(); const mid=r.top+r.height/2; const d=(mid-vh/2)/vh; const dir=Number(s.dataset.parallax||1); s.style.transform=`translateY(${(-d*22*dir).toFixed(1)}px)`; }); }
-    addEventListener('scroll',()=>{ if(!raf) raf=requestAnimationFrame(upd); },{passive:true});
-    addEventListener('resize',()=>{ if(!raf) raf=requestAnimationFrame(upd); }); upd();
-  })();
-
   // ---------- COUNT-UP STATS ----------
   (function(){
     const nums=$$('.stat-num'); if(!nums.length) return;

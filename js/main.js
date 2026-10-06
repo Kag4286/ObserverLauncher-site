@@ -52,13 +52,6 @@
   // helper: run fn once when el scrolls into view
   function onceInView(el,fn,margin){ if(!el) return; if(!('IntersectionObserver' in window)){ fn(); return; } const io=new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting){ fn(); io.disconnect(); } }); },{rootMargin:margin||'0px 0px -10% 0px',threshold:.15}); io.observe(el); }
 
-  // ---------- screenshots grid (parallax) ----------
-  const SHOTS=[['overview','shot.overview'],['console','shot.console'],['players','shot.players'],['inspector','shot.inspector'],['performance','shot.performance'],['content','shot.content'],['marketplace','shot.marketplace'],['worlds','shot.worlds'],['worldmap','shot.worldmap'],['editor','shot.editor']];
-  (function(){
-    const grid=$('#shotsGrid'); if(!grid) return;
-    grid.innerHTML=SHOTS.map(([file,key],i)=>`<figure class="shot" data-parallax="${(i%2? -1:1)}"><div class="shot-frame"><img src="./assets/shots/${file}.png" alt="ObserverLauncher ${file} screen" loading="lazy" decoding="async"></div><figcaption><b data-i18n="${key}"></b><span data-i18n="shotd.${file}"></span></figcaption></figure>`).join('');
-  })();
-
   // ---------- requirements table ----------
   (function(){
     const box=$('#reqTable'); if(!box) return;
