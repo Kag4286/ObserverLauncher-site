@@ -125,6 +125,21 @@
     heads.forEach(h=>io.observe(h));
   })();
 
+  // ---------- HERO APP TILT ----------
+  // The two hero frames lean toward the pointer (subtle 3D), so the pair feels alive instead of
+  // static. Driven by --hx/--hy (front) and --hx2/--hy2 (back) custom props.
+  (function(){
+    const app=$('#heroApp'); if(!app) return;
+    if(reduce||matchMedia('(hover: none)').matches) return;
+    let raf=0, tx=0, ty=0, cx=0, cy=0;
+    addEventListener('pointermove',e=>{ tx=(e.clientX/innerWidth-0.5); ty=(e.clientY/innerHeight-0.5); if(!raf) raf=requestAnimationFrame(step); },{passive:true});
+    function step(){ raf=0; cx+=(tx-cx)*0.08; cy+=(ty-cy)*0.08;
+      app.style.setProperty('--hx',(cx*10).toFixed(2)+'deg'); app.style.setProperty('--hy',(-cy*8).toFixed(2)+'deg');
+      app.style.setProperty('--hx2',(cx*6).toFixed(2)+'deg'); app.style.setProperty('--hy2',(-cy*5).toFixed(2)+'deg');
+      if(Math.abs(tx-cx)>0.001||Math.abs(ty-cy)>0.001) raf=requestAnimationFrame(step);
+    }
+  })();
+
   // ---------- COUNT-UP STATS ----------
   (function(){
     const nums=$$('.stat-num'); if(!nums.length) return;
@@ -173,17 +188,6 @@
   // simpler, so the interception is gone; scroll-padding-top (CSS) keeps anchors clear of the fixed
   // header, and prefers-reduced-motion still falls back to instant via the CSS media query.
   // (View Transitions are still used for the language switch in i18n.js.)
-
-  // ---------- HERO APP 3D TILT ----------
-  (function(){
-    const frame=document.querySelector('.hero-app-frame'); if(!frame) return;
-    if(reduce||matchMedia('(hover: none)').matches) return;
-    let raf=0,tx=0,ty=0,cx=0,cy=0;
-    addEventListener('pointermove',e=>{ tx=e.clientX/innerWidth-0.5; ty=e.clientY/innerHeight-0.5; if(!raf) raf=requestAnimationFrame(step); },{passive:true});
-    function step(){ raf=0; cx+=(tx-cx)*0.08; cy+=(ty-cy)*0.08;
-      frame.style.transform=`rotateY(${(-16+cx*10).toFixed(2)}deg) rotateX(${(6-cy*8).toFixed(2)}deg) rotateZ(-1.5deg)`;
-      if(Math.abs(tx-cx)>0.001||Math.abs(ty-cy)>0.001) raf=requestAnimationFrame(step); }
-  })();
 
   // ---------- RAIL PROGRESS DOTS ----------
   (function(){

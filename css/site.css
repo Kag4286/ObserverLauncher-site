@@ -180,21 +180,23 @@ body.booted .hero h1{clip-path:inset(0 0 0 0)}
 .hero-facts li{font:600 11px var(--font-mono);letter-spacing:.06em;color:var(--text-dim);border:1px solid var(--border);border-radius:999px;padding:5px 12px;background:var(--field);transition:border-color var(--dur-fast),color var(--dur-fast)}
 .hero-facts li:hover{border-color:var(--accent);color:var(--text)}
 
-/* hero floating app — two stacked frames (Overview in front, World map behind) */
-.hero-app{position:relative;justify-self:end;width:100%;max-width:640px;min-height:340px;pointer-events:none;
+/* hero floating app — two frames: World map peeks from the top-left, Overview sits front lower-right */
+.hero-app{position:relative;justify-self:end;width:100%;max-width:660px;min-height:420px;pointer-events:none;perspective:1600px;
   opacity:0;transform:translateX(36px) scale(.96);transition:opacity 1s var(--ease-out) .5s,transform 1.1s var(--ease-out) .5s}
 body.booted .hero-app{opacity:1;transform:none}
-.hero-app-frame{position:absolute;border:1px solid var(--border-strong);border-radius:var(--r);overflow:hidden;background:var(--field);box-shadow:0 60px 140px -50px rgba(0,0,0,.9),0 0 90px -40px var(--accent-glow)}
+.hero-app-frame{position:absolute;border:1px solid var(--border-strong);border-radius:var(--r);overflow:hidden;background:var(--field);box-shadow:0 60px 140px -50px rgba(0,0,0,.9),0 0 90px -40px var(--accent-glow);transition:transform .3s var(--ease-out)}
 .hero-app-frame img{display:block;width:100%;height:auto;opacity:.94}
-.hero-app-front{position:relative;top:0;left:0;z-index:2;transform:rotateY(-13deg) rotateX(5deg) rotateZ(-1deg)}
-/* back frame peeks up-left behind the front one */
-.hero-app-back{position:absolute;top:0;left:0;z-index:1;width:100%;opacity:1;
-  transform:translate(-64px,-52px) rotateY(-16deg) rotateX(6deg) rotateZ(-3deg) scale(.94);filter:brightness(.9)}
+/* front: lower-right, on top */
+.hero-app-front{top:16%;left:16%;width:84%;z-index:2;
+  transform:rotateY(calc(-13deg + var(--hx,0deg))) rotateX(calc(5deg + var(--hy,0deg))) rotateZ(-1deg)}
+/* back: upper-left, clearly visible behind the front */
+.hero-app-back{top:0;left:0;width:84%;z-index:1;filter:brightness(.9);
+  transform:translateZ(-60px) rotateY(calc(-14deg + var(--hx2,0deg))) rotateX(calc(6deg + var(--hy2,0deg))) rotateZ(-2deg)}
 .hero-app-bar{display:flex;align-items:center;gap:6px;padding:9px 13px;background:var(--panel);border-bottom:1px solid var(--border)}
 .ha-dot{width:9px;height:9px;border-radius:50%;background:var(--border-strong)}
 .ha-title{margin-left:8px;font:600 11px var(--font-mono);color:var(--text-dim)}
 .ha-live{margin-left:auto;font:700 9.5px var(--font-mono);letter-spacing:.1em;color:var(--success)}
-@media(max-width:1080px){.hero-main{grid-template-columns:1fr;gap:44px}.hero-app{justify-self:center;max-width:600px}.hero-app-back{transform:translate(-24px,-22px) rotateY(-14deg) rotateX(5deg) rotateZ(-2deg) scale(.97)}}
+@media(max-width:1080px){.hero-main{grid-template-columns:1fr;gap:44px}.hero-app{justify-self:center;max-width:600px}}
 
 /* choreography: elements fade up once body.booted is set, staggered by --d */
 .choreo{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
