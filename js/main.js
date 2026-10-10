@@ -101,27 +101,6 @@
     onceInView($('#console-band'),start);
   })();
 
-  // ---------- AI terminal (starts on scroll-in) ----------
-  (function(){
-    const body=$('#aiTerm'); if(!body) return;
-    const rows=[
-      '<span class="d">> </span><span class="k">doctor_report</span>',
-      '<span class="d">  checking port 25565 … </span><span class="ok">free</span>',
-      '<span class="d">  scanning console … </span><span class="ok">no errors</span>',
-      '<span class="d">  tps 20.0 · mspt 3.4 · ram 2.1/6 GB</span>',
-      '<span class="ok">  all clear — nothing to fix.</span>',
-      '',
-      '<span class="d">> </span><span class="k">plan_modpack</span><span class="d"> (create, jei, sodium)</span>',
-      '<span class="d">  resolved 3 projects · 1 dependency added</span>',
-      '<span class="d">  awaiting confirmation …</span>',
-      '<span class="ok">  installed 3 files. restart to apply.</span>',
-    ];
-    let i=0, started=false;
-    function push(){ if(i>=rows.length){ setTimeout(()=>{ body.innerHTML=''; i=0; push(); }, 5200); return; } body.innerHTML+=rows[i]+'\n'; body.scrollTop=body.scrollHeight; i++; setTimeout(push, 520); }
-    function start(){ if(started) return; started=true; if(reduce){ body.innerHTML=rows.join('\n'); } else setTimeout(push, 500); }
-    onceInView($('#ai'),start);
-  })();
-
   // ---------- ongoing metric jitter (after the counter warm-up in motion.js) ----------
   (function(){
     const els={tps:$('#roTps'),mspt:$('#roMspt'),cpu:$('#roCpu'),ram:$('#roRam')};
