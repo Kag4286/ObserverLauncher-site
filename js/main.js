@@ -69,7 +69,7 @@
   // ---------- limitations list ----------
   (function(){
     const box=$('#limitsList'); if(!box) return;
-    box.innerHTML=[1,2,3,4,5,6,7,8].map(n=>`<li><span class="lim-dot"></span><span data-i18n="lim.${n}"></span></li>`).join('');
+    box.innerHTML=[1,2,3,4,5,6,7,8,9,10].map(n=>`<li><span class="lim-dot"></span><span data-i18n="lim.${n}"></span></li>`).join('');
   })();
 
   // ---------- console demo (typewriter, starts on scroll-in) ----------

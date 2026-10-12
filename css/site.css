@@ -186,6 +186,9 @@ body.booted .hero h1{clip-path:inset(0 0 0 0)}
 body.booted .hero-app{opacity:1;transform:none}
 .hero-app-frame{position:absolute;border:1px solid var(--border-strong);border-radius:var(--r);overflow:hidden;background:var(--field);box-shadow:0 60px 140px -50px rgba(0,0,0,.9),0 0 90px -40px var(--accent-glow);transition:transform .3s var(--ease-out)}
 .hero-app-frame img{display:block;width:100%;height:auto;opacity:.94}
+.hero-shot-cap{grid-column:2;justify-self:end;margin:-18px 0 0;max-width:520px;text-align:right;font:500 12px var(--font-mono);letter-spacing:.02em;color:var(--text-dim)}
+.shot-cap{margin:0;padding:10px 14px;border-top:1px solid var(--border);background:var(--panel);font:500 12px var(--font-ui);color:var(--text-dim);line-height:1.5}
+@media(max-width:1080px){.hero-shot-cap{grid-column:1;justify-self:center;text-align:center;margin-top:-8px}}
 /* front: lower-right, on top */
 .hero-app-front{top:16%;left:16%;width:84%;z-index:2;
   transform:rotateY(calc(-13deg + var(--hx,0deg))) rotateX(calc(5deg + var(--hy,0deg))) rotateZ(-1deg)}
