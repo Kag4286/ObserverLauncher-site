@@ -21,6 +21,47 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "ObserverLauncher",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows 10, Windows 11, Linux",
+      "license": "https://www.apache.org/licenses/LICENSE-2.0",
+      "url": "https://observerlauncher-site.kag4286.workers.dev/",
+      "downloadUrl": "https://github.com/Kag4286/ObserverLauncher/releases/latest",
+      "description": "A local desktop app for hosting a Minecraft: Java Edition server on Windows or Linux. No account, no cloud, no terminal.",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to host a Minecraft server for free on your own PC",
+      "description": "Set up a Minecraft: Java Edition server on Windows or Linux without a terminal, using ObserverLauncher.",
+      "totalTime": "PT5M",
+      "tool": [{ "@type": "HowToTool", "name": "ObserverLauncher" }],
+      "step": [
+        { "@type": "HowToStep", "position": 1, "name": "Pick a folder", "text": "Choose an empty folder for the server, or let the launcher suggest one under Documents." },
+        { "@type": "HowToStep", "position": 2, "name": "Choose software and version", "text": "Pick from ten server types (Vanilla, Paper, Purpur, Fabric, Forge and more) and a live Minecraft version list. Java is detected and installed automatically if missing." },
+        { "@type": "HowToStep", "position": 3, "name": "Press Start", "text": "The launcher downloads the jar, writes the config, opens the firewall when you ask, and starts the server." },
+        { "@type": "HowToStep", "position": 4, "name": "Share the address", "text": "When the server is running, share the local address with friends on the same network, or use the built-in tunnel for a public address with no router setup." }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Can I host a Minecraft server for free on my own computer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ObserverLauncher is free and open source (Apache-2.0). It runs the server on your own PC, so there is no hosting bill. Your computer needs to be on for friends to join." } },
+        { "@type": "Question", "name": "Do I need to know how to use a terminal or command line?", "acceptedAnswer": { "@type": "Answer", "text": "No. ObserverLauncher handles the setup through a graphical window: it downloads the server software, installs the right Java, writes the config and opens the firewall. Beginner mode hides the advanced tools." } },
+        { "@type": "Question", "name": "Does it work on Windows and Linux?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ObserverLauncher runs on Windows 10/11 and on modern 64-bit Linux distributions. There is no macOS build." } },
+        { "@type": "Question", "name": "Does ObserverLauncher collect my data or require an account?", "acceptedAnswer": { "@type": "Answer", "text": "No. There is no account, no telemetry and no cloud service. The server and its data stay on your machine, and nothing keeps running once you close the app." } },
+        { "@type": "Question", "name": "Which server software can I run?", "acceptedAnswer": { "@type": "Answer", "text": "Vanilla, Paper, Purpur, Leaf, Folia, Fabric, Forge, NeoForge, Spigot and Velocity. Version lists load live from each project's official source." } }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body class="is-booting">
 
@@ -206,8 +247,27 @@
   </div>
 </section>
 
+<!-- ============ BEGINNER ============ -->
+<section class="band beg-band" id="beginner" data-ch="06" data-name="Beginner">
+  <div class="beg-inner">
+    <div class="beg-copy">
+      <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="beg.eyebrow">NEW TO SERVERS</span></p>
+      <h2 data-i18n="beg.title">Never hosted a Minecraft server before? Start here.</h2>
+      <p data-i18n="beg.lead">Most guides assume you already know what a jar, a port and a config file are. Beginner mode skips all of that. Turn it on and the app shows only what you need to get a server running: a folder, a version, and a Start button.</p>
+      <a class="btn primary lg magnet beg-cta" href="#download" data-i18n="beg.cta">Download and start</a>
+    </div>
+    <div class="beg-list">
+      <div class="beg-card"><span class="bc-step">01</span><b data-i18n="beg.c1t">A calmer app</b><p data-i18n="beg.c1d">Beginner mode hides the advanced tools and keeps the essentials: Overview, Console, Players, Server properties and Settings.</p></div>
+      <div class="beg-card"><span class="bc-step">02</span><b data-i18n="beg.c2t">Guided setup</b><p data-i18n="beg.c2d">The wizard asks what kind of server you want, downloads it, and installs the right Java for you. No terminal, no commands to memorise.</p></div>
+      <div class="beg-card"><span class="bc-step">03</span><b data-i18n="beg.c3t">Share the address</b><p data-i18n="beg.c3d">When the server is running, a single card shows the address to send your friends, with a one-click way to share it over the internet.</p></div>
+      <div class="beg-card"><span class="bc-step">04</span><b data-i18n="beg.c4t">Nothing is locked away</b><p data-i18n="beg.c4d">A "Show all tools" button brings back every feature whenever you want, so you are never stuck in the simple view.</p></div>
+      <div class="beg-note"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg><span data-i18n="beg.note">Advanced users: everything below is still there, just one toggle away.</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SOFTWARE ============ -->
-<section class="band" id="software" data-ch="06" data-name="Compatibility">
+<section class="band" id="software" data-ch="07" data-name="Compatibility">
   <div class="band-head">
     <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="software.eyebrow">COMPATIBILITY</span></p>
     <h2 data-i18n="software.title">Ten server types, one window.</h2>
@@ -237,7 +297,7 @@
 </section>
 
 <!-- ============ AI / MCP ============ -->
-<section class="band ai-band" id="ai" data-ch="07" data-name="AI / MCP">
+<section class="band ai-band" id="ai" data-ch="08" data-name="AI / MCP">
   <div class="ai-inner">
     <div class="ai-copy">
       <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="ai.eyebrow">MCP / AI INTEGRATION</span></p>
@@ -265,7 +325,7 @@
 </section>
 
 <!-- ============ PRIVACY ============ -->
-<section class="band privacy-band" id="privacy" data-ch="08" data-name="Privacy">
+<section class="band privacy-band" id="privacy" data-ch="09" data-name="Privacy">
   <div class="band-head">
     <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="privacy.eyebrow">DATA &amp; PRIVACY</span></p>
     <h2 data-i18n="privacy.title">Nothing leaves your machine.</h2>
@@ -314,7 +374,7 @@
 </section>
 
 <!-- ============ DOWNLOAD ============ -->
-<section class="band download-band" id="download" data-ch="09" data-name="Download">
+<section class="band download-band" id="download" data-ch="10" data-name="Download">
   <div class="dl-inner">
     <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="dl.eyebrow">DOWNLOAD</span></p>
     <h2 data-i18n="dl.title">Get it and press Start.</h2>

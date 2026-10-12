@@ -304,6 +304,25 @@ body.booted .choreo[data-choreo="5"]{transition-delay:.70s}
 .priv-card b{display:block;font-size:15px;margin-bottom:8px}
 .priv-card p{font-size:13px;color:var(--text-dim);line-height:1.6}
 
+/* ============ BEGINNER ============ */
+.beg-band{position:relative}
+.beg-band::before{content:'';position:absolute;inset:0;background:radial-gradient(900px 420px at 10% 0%,var(--accent-weak),transparent 62%);pointer-events:none}
+.beg-inner{position:relative;display:grid;grid-template-columns:1fr 1.15fr;gap:56px;align-items:start}
+.beg-copy h2{font-size:clamp(26px,3.8vw,42px);letter-spacing:-.025em;margin:16px 0 18px;line-height:1.14}
+.beg-copy p{color:var(--text-muted);font-size:16px;line-height:1.75;max-width:460px}
+.beg-cta{margin-top:26px}
+.beg-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.beg-card{position:relative;border:1px solid var(--border);border-radius:var(--r);padding:22px 22px 22px 26px;background:var(--panel);overflow:hidden;transition:border-color var(--dur-fast),transform var(--dur-fast)}
+.beg-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),var(--accent-dim));opacity:.7;transition:opacity var(--dur-fast)}
+.beg-card:hover{border-color:var(--border-strong);transform:translateY(-3px)}
+.beg-card:hover::before{opacity:1}
+.beg-card .bc-step{display:block;font:700 11px var(--font-mono);letter-spacing:.14em;color:var(--accent-dim);margin-bottom:10px}
+.beg-card b{display:block;font-size:15px;margin-bottom:7px}
+.beg-card p{font-size:13px;color:var(--text-dim);line-height:1.6}
+.beg-note{grid-column:1 / -1;display:flex;align-items:center;gap:10px;margin-top:4px;padding:14px 18px;border:1px dashed var(--border-strong);border-radius:var(--r);font-size:13px;color:var(--text-dim);background:var(--field)}
+.beg-note svg{flex-shrink:0;color:var(--accent)}
+@media(max-width:900px){.beg-inner{grid-template-columns:1fr;gap:30px}.beg-list{grid-template-columns:1fr}}
+
 /* ============ DOWNLOAD ============ */
 .download-band{border-bottom:1px solid var(--border)}
 .dl-inner{text-align:center;max-width:780px;margin:0 auto}
