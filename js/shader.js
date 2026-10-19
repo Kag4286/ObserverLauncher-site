@@ -78,12 +78,21 @@
   addEventListener('scroll',()=>{ const p=Math.min(1,scrollY/Math.max(1,innerHeight)); intensity=0.5+p*0.3; },{passive:true});
 
   let start=performance.now(), raf=0, lastDraw=0, frameGap=targetFps?1000/targetFps:0;
+  // PERF: the field is only visible behind the hero. Once the hero scrolls out of view the
+  // fragment shader is drawing pixels nobody can see, which on a phone keeps the GPU warm and
+  // drains the battery. Track visibility with an IntersectionObserver and stop the loop entirely
+  // while the hero is off-screen; resume when it scrolls back.
+  let heroVisible=true;
   function draw(t){ gl.uniform1f(uTime,t); gl.uniform2f(uMouse,mx,my); gl.uniform1f(uInt,intensity); gl.clear(gl.COLOR_BUFFER_BIT); gl.drawArrays(gl.TRIANGLES,0,6); }
   function frame(now){ const t=(now-start)/1000; mx+=(tx-mx)*0.05; my+=(ty-my)*0.05;
-    if(!frameGap || now-lastDraw>=frameGap){ lastDraw=now; draw(t); }
+    if(!frameGap || now-lastDraw>=frameGap){ lastDraw=now; if(heroVisible) draw(t); }
     raf=requestAnimationFrame(frame); }
 
   if(reduce){ draw(1.0); cv.dataset.on='1'; return; }
+  const hero=document.getElementById('hero');
+  if(hero && 'IntersectionObserver' in window){
+    new IntersectionObserver((es)=>{ heroVisible=es[0].isIntersecting; },{rootMargin:'0px 0px -10% 0px'}).observe(hero);
+  }
   document.addEventListener('visibilitychange',()=>{ if(document.hidden){ cancelAnimationFrame(raf); raf=0; } else if(!raf){ start=performance.now()-1; raf=requestAnimationFrame(frame); } });
   raf=requestAnimationFrame(frame);
   cv.dataset.on='1';

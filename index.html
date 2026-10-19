@@ -19,7 +19,13 @@
 <meta name="twitter:image" content="https://observerlauncher-site.kag4286.workers.dev/assets/shots/overview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- PERF: the font stylesheet used to be render-blocking, so a phone waited for two cross-origin
+     round-trips before painting anything. Load it as a normal stylesheet for crawlers, but swap it
+     for a non-blocking one via media=print + onload. The font-display=swap in the URL means text
+     paints immediately in the fallback and reflows once Manrope arrives. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"></noscript>
+<link rel="preload" as="image" href="./assets/shots/overview.png" fetchpriority="high">
 <link rel="stylesheet" href="./css/site.css">
 <script type="application/ld+json">
 {
@@ -153,17 +159,29 @@
   </div>
   <div class="hero-app" id="heroApp">
     <div class="hero-app-frame hero-app-back">
-      <img src="./assets/shots/worldmap.png" alt="World map tab in ObserverLauncher, showing the explored area and waypoints of a Minecraft server world" loading="lazy" decoding="async">
+      <img src="./assets/shots/worldmap.png" width="1920" height="1080" alt="World map tab in ObserverLauncher, showing the explored area and waypoints of a Minecraft server world" loading="lazy" decoding="async">
     </div>
     <div class="hero-app-frame hero-app-front">
       <div class="hero-app-bar"><span class="ha-dot"></span><span class="ha-dot"></span><span class="ha-dot"></span><span class="ha-title">observerlauncher</span><span class="ha-live">● LIVE</span></div>
-      <img src="./assets/shots/overview.png" alt="Overview tab in ObserverLauncher, showing a running Minecraft server with TPS, memory and a Start button" loading="eager" decoding="async">
+      <img src="./assets/shots/overview.png" width="1920" height="1080" alt="Overview tab in ObserverLauncher, showing a running Minecraft server with TPS, memory and a Start button" loading="eager" decoding="async">
     </div>
   </div>
   <p class="hero-shot-cap choreo" data-choreo="5" data-i18n="cap.hero">Overview and the world map, as they look in the launcher.</p>
   </div><!-- /hero-main -->
 
-  <div class="instrument choreo" data-choreo="5" aria-hidden="true">
+  <!-- v6.0.0: the player inspector is the headline of this release, so it gets its own pair of
+       frames under the hero rather than being buried in the feature grid. Same card language. -->
+  <div class="hero-shots hero-shots-inspector choreo" data-choreo="6">
+    <figure class="hero-shot">
+      <img src="./assets/shots/player-inspector.png" width="1920" height="1080" alt="Player inspector in ObserverLauncher: a rotatable 3D model of the player with their skin and armor, beside the four headline stats and an All stats disclosure" loading="lazy" decoding="async">
+      <figcaption data-i18n="cap.inspector">The player inspector: a rotatable 3D model in the player's own skin and armor.</figcaption>
+    </figure>
+    <figure class="hero-shot">
+      <img src="./assets/shots/inventory.png" width="1918" height="1079" alt="Player inventory in ObserverLauncher with real item icons, stack counts and empty slots outlined" loading="lazy" decoding="async">
+      <figcaption data-i18n="cap.inventory">Inventory with real item icons, including items from mods.</figcaption>
+    </figure>
+  </div>
+  <div class="instrument choreo" data-choreo="7" aria-hidden="true">
     <div class="pulse-wave" id="pulseWave"></div>
     <div class="readouts">
       <div class="readout"><span class="ro-label">TPS</span><b id="roTps" class="ok">20.0</b></div>
@@ -225,7 +243,7 @@
   <div class="band-head">
     <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="features.eyebrow">CAPABILITIES</span></p>
     <h2 data-i18n="features.title">Everything the setup needs.</h2>
-    <p class="band-sub" data-i18n="features.sub">Since 1.0.0 the project favours stability and polish over new features.</p>
+    <p class="band-sub" data-i18n="features.sub">The desktop app, a headless mode, a command line and Docker all share one backend.</p>
   </div>
   <div class="feat-grid" id="featGrid"></div>
 </section>
@@ -321,7 +339,7 @@
     </div>
     <figure class="ai-shot">
       <div class="ai-term-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="ai-term-title">observerlauncher · settings / MCP</span></div>
-      <img src="./assets/shots/MCP.png" alt="MCP / AI integration settings in ObserverLauncher, with a Copy MCP config button" loading="lazy" decoding="async">
+      <img src="./assets/shots/MCP.png" width="1918" height="1080" alt="MCP / AI integration settings in ObserverLauncher, with a Copy MCP config button" loading="lazy" decoding="async">
       <figcaption class="shot-cap" data-i18n="cap.mcp">The MCP / AI integration settings, where you copy the client config.</figcaption>
     </figure>
   </div>
@@ -384,11 +402,11 @@
     <div class="dl-grid">
       <a class="dl-card magnet" href="https://github.com/Kag4286/ObserverLauncher/releases/latest" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 5.5L10.5 4.5v7H3zM3 18.5l7.5 1v-7H3zM11.5 4.4L21 3v8.5h-9.5zM11.5 19.6L21 21v-8.5h-9.5z"/></svg>
-        <b>Windows 10/11</b><span data-i18n="dl.win">ObserverLauncher-5.7.0-setup.exe</span>
+        <b>Windows 10/11</b><span data-i18n="dl.win">ObserverLauncher-6.0.0-setup.exe</span>
       </a>
       <a class="dl-card magnet" href="https://github.com/Kag4286/ObserverLauncher/releases/latest" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0012 2z"/></svg>
-        <b>Linux</b><span data-i18n="dl.linux">ObserverLauncher-5.7.0.AppImage</span>
+        <b>Linux</b><span data-i18n="dl.linux">ObserverLauncher-6.0.0.AppImage</span>
       </a>
     </div>
     <p class="dl-note" data-i18n="dl.note">Auto-update is built in for the installer and the AppImage. No admin rights needed.</p>

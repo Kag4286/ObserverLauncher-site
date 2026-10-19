@@ -68,7 +68,9 @@
 
   // ---------- MAGNETIC BUTTONS ----------
   (function(){
-    if(reduce) return;
+    // PERF (mobile): a magnetic hover is a pointer-only nicety, and on a touch device the
+    // pointermove listeners never fire usefully but still cost a layout read per event.
+    if(reduce||matchMedia('(hover: none)').matches) return;
     const MAX=5;
     $$('.magnet').forEach(el=>{
       el.addEventListener('pointermove',e=>{ const r=el.getBoundingClientRect(); const dx=Math.max(-MAX,Math.min(MAX,(e.clientX-(r.left+r.width/2))/10)); const dy=Math.max(-MAX,Math.min(MAX,(e.clientY-(r.top+r.height/2))/10)); el.style.transform=`translate(${dx}px,${dy}px)`; });

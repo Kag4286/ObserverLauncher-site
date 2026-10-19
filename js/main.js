@@ -29,12 +29,20 @@
     cli:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3"/><path d="M12.5 15h4"/>',
     docker:'<path d="M3 9h14a1 1 0 011 1v3a7 7 0 01-7 7H6a3 3 0 01-3-3z"/><path d="M18 10a3 3 0 013 3"/><rect x="5" y="5" width="2.5" height="2.5" rx=".4"/><rect x="8.5" y="5" width="2.5" height="2.5" rx=".4"/><rect x="12" y="5" width="2.5" height="2.5" rx=".4"/><rect x="8.5" y="1.5" width="2.5" height="2.5" rx=".4"/>',
     modpack:'<path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/>', remote:'<path d="M12 20h.01"/><path d="M8.5 16.5a5 5 0 017 0"/><path d="M5 13a10 10 0 0114 0"/><path d="M2 9.5a15 15 0 0120 0"/>',
+    // v6.0.0
+    skin:'<circle cx="12" cy="7" r="3.5"/><path d="M5 21v-3a7 7 0 0114 0v3"/><path d="M9 7h6M12 3.5V7"/>',
+    bedrock:'<rect x="4" y="3" width="7" height="10" rx="1"/><rect x="13" y="11" width="7" height="10" rx="1"/><path d="M11 8h2M13 8v3"/>',
+    alert:'<path d="M12 3l9 16H3z"/><path d="M12 9v5M12 17h.01"/>',
+    hook:'<path d="M9 3v6a4 4 0 008 0V3"/><path d="M13 3h-4M21 3h-4"/><path d="M9 15a4 4 0 004 4h4"/><circle cx="19" cy="19" r="2"/>',
   };
   const FEATURES=[
     ['setup','feat.setup','feat.setupD'],['monitor','feat.monitor','feat.monitorD'],['players','feat.players','feat.playersD'],
     ['market','feat.market','feat.marketD'],['editor','feat.editor','feat.editorD'],['backup','feat.backup','feat.backupD'],
     ['map','feat.map','feat.mapD'],['console','feat.console','feat.consoleD'],['multi','feat.multi','feat.multiD'],
     ['cli','feat.headless','feat.headlessD'],['docker','feat.docker','feat.dockerD'],['modpack','feat.modpack','feat.modpackD'],['remote','feat.remote','feat.remoteD'],
+    // v6.0.0 additions
+    ['skin','feat.skin','feat.skinD'],['bedrock','feat.bedrock','feat.bedrockD'],
+    ['alert','feat.alert','feat.alertD'],['hook','feat.hook','feat.hookD'],
   ];
   (function(){
     const grid=$('#featGrid'); if(!grid) return;

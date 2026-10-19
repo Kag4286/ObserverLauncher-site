@@ -155,7 +155,10 @@ main{position:relative;z-index:1}
    WebGL/scanline layers but below the content. The ambient effect stays at the edges. */
 main::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:radial-gradient(120% 85% at 50% 22%, rgba(12,13,15,.42), rgba(12,13,15,.86) 74%)}
-.hero{max-width:var(--maxw);margin:0 auto;padding:150px clamp(16px,4vw,40px) 40px;min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative}
+/* v6.0.0: the hero now carries two inspector shots under the app pair, so it can no longer be
+   forced to exactly one screen. `justify-content:flex-start` keeps the content at the top of the
+   section and lets it grow downward instead of being vertically re-centred as it grows. */
+.hero{max-width:var(--maxw);margin:0 auto;padding:150px clamp(16px,4vw,40px) 40px;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-start;position:relative}
 @supports (height:100svh){.hero{min-height:100svh}}
 .hero-grid{position:absolute;inset:0;pointer-events:none;overflow:hidden}
 .hero-grid span{position:absolute;background:var(--border);opacity:.28}
@@ -201,6 +204,13 @@ body.booted .hero-app{opacity:1;transform:none}
 .ha-live{margin-left:auto;font:700 9.5px var(--font-mono);letter-spacing:.1em;color:var(--success)}
 @media(max-width:1080px){.hero-main{grid-template-columns:1fr;gap:44px}.hero-app{justify-self:center;max-width:600px}}
 
+/* v6.0.0 hero inspector shots: two cards under the hero, same frame language as the app shot. */
+.hero-shots{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px;position:relative;z-index:1}
+.hero-shot{margin:0;border:1px solid var(--border-strong);border-radius:var(--r);overflow:hidden;background:var(--field);box-shadow:0 40px 100px -60px rgba(0,0,0,.9)}
+.hero-shot img{display:block;width:100%;height:auto;opacity:.96}
+.hero-shot figcaption{padding:10px 14px;border-top:1px solid var(--border);background:var(--panel);font:500 12px var(--font-ui);color:var(--text-dim);line-height:1.5}
+@media(max-width:820px){.hero-shots{grid-template-columns:1fr;gap:14px;margin-top:32px}}
+
 /* choreography: elements fade up once body.booted is set, staggered by --d */
 .choreo{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
 body.booted .choreo{opacity:1;transform:none}
@@ -210,6 +220,8 @@ body.booted .choreo[data-choreo="2"]{transition-delay:.30s}
 body.booted .choreo[data-choreo="3"]{transition-delay:.42s}
 body.booted .choreo[data-choreo="4"]{transition-delay:.54s}
 body.booted .choreo[data-choreo="5"]{transition-delay:.70s}
+body.booted .choreo[data-choreo="6"]{transition-delay:.82s}
+body.booted .choreo[data-choreo="7"]{transition-delay:.94s}
 
 /* instrument strip */
 .instrument{margin-top:56px;border:1px solid var(--border);border-radius:var(--r);background:linear-gradient(180deg,var(--panel-raised),var(--panel));
@@ -379,6 +391,16 @@ body.booted .choreo[data-choreo="5"]{transition-delay:.70s}
 ::view-transition-old(root),::view-transition-new(root){animation-duration:.32s;animation-timing-function:var(--ease-out)}
 
 /* ============ RESPONSIVE ============ */
+
+/* PERF: skip layout+paint for off-screen sections. Each band is tall and independent, so
+   content-visibility:auto lets the browser defer the work until it approaches the viewport.
+   contain-intrinsic-size keeps the scrollbar stable (otherwise the page height jumps as bands
+   resolve). This is the single biggest win on a phone: the first paint only touches the hero. */
+/* Only the tall content bands. The footer and the hero are short and always near the fold; giving
+   them an intrinsic size would just create dead space. `auto` makes the browser remember the real
+   height after the first paint, so the placeholder only matters once. */
+.band{content-visibility:auto;contain-intrinsic-size:auto 760px}
+
 @media (max-width:900px){
   .site-nav{display:none}
   .intro-grid,.ai-inner{grid-template-columns:1fr}
@@ -389,6 +411,16 @@ body.booted .choreo[data-choreo="5"]{transition-delay:.70s}
      costly to repaint on mobile GPUs — drop them and use a solid header instead. */
   .scanline{display:none}
   .site-head{backdrop-filter:none;background:rgba(12,13,15,.96)}
+  /* The mobile menu used backdrop-filter:blur(12px) over the whole screen, which is one of the
+     most expensive things a mobile GPU can be asked to do on every open. A solid panel reads the
+     same and costs nothing. */
+  .mobile-menu{backdrop-filter:none;background:rgba(8,11,15,.99)}
+  /* The two hero frames are rotated in 3D. Compositing two perspective-transformed layers on a
+     phone is a known jank source; flatten them to a plain stacked pair at this width. */
+  .hero-app{perspective:none}
+  .hero-app-front,.hero-app-back{transform:none!important}
+  .hero-app-back{position:relative;top:auto;left:auto;width:100%;margin-bottom:-40px;filter:none;opacity:.55}
+  .hero-app-front{position:relative;top:auto;left:auto;width:100%}
   .stat{padding:22px 18px}
 }
 @media (max-width:620px){
@@ -403,6 +435,12 @@ body.booted .choreo[data-choreo="5"]{transition-delay:.70s}
   .hero-facts{gap:6px}
   .band{padding:72px clamp(16px,4vw,40px)}
   .foot-main{flex-direction:column;gap:28px}
+  /* A 300px terminal on a 480px-tall phone eats most of the screen at once. Cap it by height so
+     the demo still scrolls but the next section stays reachable. */
+  .console-body{height:min(300px,42vh)}
+  /* The scroll cue is a hint, not content; hiding it on a small screen removes one infinite
+     animation from the compositor. */
+  .scroll-cue{display:none}
 }
 @media (max-width:480px){
   .site-head{gap:10px;padding:0 14px}
