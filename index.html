@@ -3,26 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ObserverLauncher — Run a Minecraft server without a terminal</title>
-<meta name="description" content="A local desktop launcher for Minecraft: Java Edition servers. No account, no cloud, no terminal. Windows and Linux.">
-<meta name="keywords" content="Minecraft Java Edition, Minecraft server, local Minecraft server, server control panel, Minecraft server management, MCP, Model Context Protocol, AI-assisted server automation">
+<title>ObserverLauncher — Host your Minecraft server in 60 seconds</title>
+<meta name="description" content="A modern desktop control panel for Minecraft: Java Edition servers. Automatic Java, built-in tunnels, 3D player inspection, and zero terminal commands. Free & open source.">
+<meta name="keywords" content="Minecraft Java Edition, Minecraft server, local Minecraft server, server control panel, Minecraft server management, MCP, Model Context Protocol, Playit tunnel">
 <link rel="canonical" href="https://observerlauncher-site.kag4286.workers.dev/">
-<meta property="og:title" content="ObserverLauncher — Run a Minecraft server without a terminal">
-<meta property="og:description" content="A local desktop control panel for Minecraft: Java Edition servers. No account, no cloud, no terminal. Windows and Linux.">
+<meta property="og:title" content="ObserverLauncher — Host your Minecraft server in 60 seconds">
+<meta property="og:description" content="A modern desktop control panel for Minecraft: Java Edition servers. Automatic Java, built-in tunnels, and zero terminal commands.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://observerlauncher-site.kag4286.workers.dev/">
 <meta property="og:image" content="https://observerlauncher-site.kag4286.workers.dev/assets/shots/overview.png">
 <meta property="og:site_name" content="ObserverLauncher">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ObserverLauncher — Run a Minecraft server without a terminal">
-<meta name="twitter:description" content="A local desktop control panel for Minecraft: Java Edition servers. No account, no cloud, no terminal.">
+<meta name="twitter:title" content="ObserverLauncher — Host your Minecraft server in 60 seconds">
+<meta name="twitter:description" content="A modern desktop control panel for Minecraft: Java Edition servers. Automatic Java, built-in tunnels, and zero terminal commands.">
 <meta name="twitter:image" content="https://observerlauncher-site.kag4286.workers.dev/assets/shots/overview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- PERF: the font stylesheet used to be render-blocking, so a phone waited for two cross-origin
-     round-trips before painting anything. Load it as a normal stylesheet for crawlers, but swap it
-     for a non-blocking one via media=print + onload. The font-display=swap in the URL means text
-     paints immediately in the fallback and reflows once Manrope arrives. -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"></noscript>
 <link rel="preload" as="image" href="./assets/shots/overview.png" fetchpriority="high">
@@ -39,79 +35,61 @@
       "license": "https://www.apache.org/licenses/LICENSE-2.0",
       "url": "https://observerlauncher-site.kag4286.workers.dev/",
       "downloadUrl": "https://github.com/Kag4286/ObserverLauncher/releases/latest",
-      "description": "A local desktop app for hosting a Minecraft: Java Edition server on Windows or Linux. No account, no cloud, no terminal.",
+      "description": "A modern desktop control panel for hosting a Minecraft: Java Edition server on your PC without terminal commands. Automatic Java, built-in tunnels, 3D player inspection.",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     },
     {
       "@type": "HowTo",
       "name": "How to host a Minecraft server for free on your own PC",
       "description": "Set up a Minecraft: Java Edition server on Windows or Linux without a terminal, using ObserverLauncher.",
-      "totalTime": "PT5M",
+      "totalTime": "PT1M",
       "tool": [{ "@type": "HowToTool", "name": "ObserverLauncher" }],
       "step": [
-        { "@type": "HowToStep", "position": 1, "name": "Pick a folder", "text": "Choose an empty folder for the server, or let the launcher suggest one under Documents." },
-        { "@type": "HowToStep", "position": 2, "name": "Choose software and version", "text": "Pick from ten server types (Vanilla, Paper, Purpur, Fabric, Forge and more) and a live Minecraft version list. Java is detected and installed automatically if missing." },
-        { "@type": "HowToStep", "position": 3, "name": "Press Start", "text": "The launcher downloads the jar, writes the config, opens the firewall when you ask, and starts the server." },
-        { "@type": "HowToStep", "position": 4, "name": "Share the address", "text": "When the server is running, share the local address with friends on the same network, or use the built-in tunnel for a public address with no router setup." }
+        { "@type": "HowToStep", "position": 1, "name": "Pick a folder", "text": "Choose an empty folder or let the launcher suggest one." },
+        { "@type": "HowToStep", "position": 2, "name": "Choose software & version", "text": "Pick from Paper, Fabric, Purpur, Forge or Vanilla. Java installs automatically." },
+        { "@type": "HowToStep", "position": 3, "name": "Press Start & Play", "text": "The server starts instantly with built-in tunnel support for friends." }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Can I host a Minecraft server for free on my own computer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ObserverLauncher is free and open source (Apache-2.0). It runs the server on your own PC, so there is no hosting bill. Your computer needs to be on for friends to join." } },
-        { "@type": "Question", "name": "Do I need to know how to use a terminal or command line?", "acceptedAnswer": { "@type": "Answer", "text": "No. ObserverLauncher handles the setup through a graphical window: it downloads the server software, installs the right Java, writes the config and opens the firewall. Beginner mode hides the advanced tools." } },
-        { "@type": "Question", "name": "Does it work on Windows and Linux?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ObserverLauncher runs on Windows 10/11 and on modern 64-bit Linux distributions. There is no macOS build." } },
-        { "@type": "Question", "name": "Does ObserverLauncher collect my data or require an account?", "acceptedAnswer": { "@type": "Answer", "text": "No. There is no account, no telemetry and no cloud service. The server and its data stay on your machine, and nothing keeps running once you close the app." } },
-        { "@type": "Question", "name": "Which server software can I run?", "acceptedAnswer": { "@type": "Answer", "text": "Vanilla, Paper, Purpur, Leaf, Folia, Fabric, Forge, NeoForge, Spigot and Velocity. Version lists load live from each project's official source." } }
+        { "@type": "Question", "name": "Can I host a Minecraft server for free on my own computer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ObserverLauncher is 100% free and open-source under Apache-2.0. The server runs directly on your PC with zero subscription or cloud hosting bills." } },
+        { "@type": "Question", "name": "Do I need to know how to use a terminal or open router ports?", "acceptedAnswer": { "@type": "Answer", "text": "No. ObserverLauncher handles Java installation, firewall configuration, and offers 1-click built-in tunneling (Playit.gg / Pinggy) so friends can join over the internet without touching your router." } },
+        { "@type": "Question", "name": "Does it work on Windows and Linux?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, ObserverLauncher runs natively on 64-bit Windows 10/11 and modern Linux distributions." } },
+        { "@type": "Question", "name": "Does ObserverLauncher collect my data or require an account?", "acceptedAnswer": { "@type": "Answer", "text": "No. There is no account, no telemetry and no tracking. All world data and configs stay 100% on your machine." } }
       ]
     }
   ]
 }
 </script>
 </head>
-<body class="is-booting">
+<body>
 
-<!-- scroll progress -->
+<!-- scroll progress bar -->
 <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
-
-<!-- ============ BOOT SEQUENCE ============ -->
-<div class="boot" id="boot" role="status" aria-label="Loading">
-  <div class="boot-inner">
-    <div class="boot-mark">OBSERVER<span>LAUNCHER</span></div>
-    <div class="boot-bar"><i id="bootBar"></i></div>
-    <div class="boot-status" id="bootStatus">INIT</div>
-  </div>
-  <div class="boot-skip">PRESS ANY KEY TO SKIP</div>
-</div>
-
-<!-- ============ SIGNAL FIELD ============ -->
-<canvas id="field" aria-hidden="true"></canvas>
-<div class="field-fallback" aria-hidden="true"></div>
-<div class="scanline" aria-hidden="true"></div>
-
-<!-- ============ SECTION RAIL ============ -->
-<nav class="rail" id="rail" aria-label="Sections">
-  <span class="rail-idx" id="railIdx">01 / 10</span>
-  <ul class="rail-list" id="railList"></ul>
-</nav>
 
 <!-- ============ HEADER ============ -->
 <header class="site-head" id="top">
   <a class="brand" href="#top">
-    <span class="brand-mark" aria-hidden="true"><img src="./assets/shots/icon.png" alt=""></span>
-    <span class="brand-text"><b>ObserverLauncher</b></span>
+    <span class="brand-mark" aria-hidden="true"><img src="./assets/shots/icon.png" alt="ObserverLauncher Logo"></span>
+    <span class="brand-text">
+      <b>ObserverLauncher</b>
+      <span class="brand-version">v6.1.0</span>
+    </span>
   </a>
 
-  <nav class="site-nav" aria-label="Sections">
-    <a href="#features" data-i18n="nav.features">Features</a>
+  <nav class="site-nav" aria-label="Main Navigation">
+    <a href="#why" data-i18n="nav.why">Why Observer</a>
+    <a href="#showcase" data-i18n="nav.showcase">Showcase</a>
+    <a href="#software" data-i18n="nav.software">Software</a>
     <a href="#ai" data-i18n="nav.ai">AI / MCP</a>
-    <a href="#download" data-i18n="nav.download">Download</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
     <a href="./changelog.html" data-i18n="nav.changelog">Changelog</a>
   </nav>
 
   <div class="head-actions">
     <div class="lang" id="lang">
-      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select language">
         <span id="langCurrent">EN</span>
         <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
@@ -128,9 +106,12 @@
 </header>
 
 <!-- ============ MOBILE MENU ============ -->
-<nav class="mobile-menu" id="mobileMenu" hidden aria-label="Sections">
-  <a href="#features" data-i18n="nav.features">Features</a>
+<nav class="mobile-menu" id="mobileMenu" hidden aria-label="Mobile Navigation">
+  <a href="#why" data-i18n="nav.why">Why Observer</a>
+  <a href="#showcase" data-i18n="nav.showcase">Showcase</a>
+  <a href="#software" data-i18n="nav.software">Software</a>
   <a href="#ai" data-i18n="nav.ai">AI / MCP</a>
+  <a href="#faq" data-i18n="nav.faq">FAQ</a>
   <a href="#download" data-i18n="nav.download">Download</a>
   <a href="./changelog.html" data-i18n="nav.changelog">Changelog</a>
 </nav>
@@ -138,280 +119,397 @@
 <main>
 
 <!-- ============ HERO ============ -->
-<section class="hero" id="hero" data-ch="01" data-name="Overview">
-  <div class="hero-grid" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-  <div class="hero-sweep" aria-hidden="true"></div>
-  <div class="hero-main">
+<section class="hero" id="hero">
   <div class="hero-inner">
-    <p class="eyebrow choreo" data-choreo="0"><span class="eyebrow-tick"></span><span data-i18n="hero.eyebrow">LOCAL SERVER CONTROL</span></p>
-    <h1 class="choreo" data-choreo="1" data-i18n-html="hero.title">Run a Minecraft server<br>without a terminal.</h1>
-    <p class="hero-lead choreo" data-choreo="2" data-i18n="hero.lead">ObserverLauncher downloads the server software, installs Java, edits the config, opens the firewall and backs up your worlds. You pick a folder, choose a server type, and press Start. Everything runs on your own machine.</p>
-    <div class="hero-cta choreo" data-choreo="3">
-      <a class="btn primary lg magnet" href="#download" data-i18n="cta.getStarted">Get ObserverLauncher</a>
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span data-i18n="hero.badge">New release 6.1.0 • Free & Open Source</span>
+    </div>
+    <h1 data-i18n-html="hero.title">Host your Minecraft server in 60 seconds.<br>No terminal required.</h1>
+    <p class="hero-lead" data-i18n="hero.lead">ObserverLauncher handles Java runtimes, firewall rules, and server configurations automatically. Share a link with your friends through built-in tunnels without touching your router.</p>
+    
+    <div class="hero-cta">
+      <a class="btn primary lg magnet" href="#download">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg>
+        <span data-i18n="cta.getStarted">Download ObserverLauncher</span>
+      </a>
       <a class="btn ghost lg" href="https://github.com/Kag4286/ObserverLauncher" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.9 4.8 19 5.1 19 5.1c.6 1.6.2 2.8.1 3.1.7.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0023.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.9 4.8 19 5.1 19 5.1c.6 1.6.2 2.8.1 3.1.7.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0023.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
         <span data-i18n="cta.github">View on GitHub</span>
       </a>
     </div>
-    <ul class="hero-facts choreo" data-choreo="4">
-      <li data-i18n="hero.fact1">No account</li><li data-i18n="hero.fact2">No cloud</li><li data-i18n="hero.fact3">No telemetry</li><li data-i18n="hero.fact4">Windows &amp; Linux</li>
+
+    <ul class="hero-facts">
+      <li data-i18n="hero.fact1">No account needed</li>
+      <li data-i18n="hero.fact2">100% Local on your PC</li>
+      <li data-i18n="hero.fact3">Zero telemetry or tracking</li>
+      <li data-i18n="hero.fact4">Windows &amp; Linux</li>
     </ul>
   </div>
-  <div class="hero-app" id="heroApp">
-    <div class="hero-app-frame hero-app-back">
-      <img src="./assets/shots/worldmap.png" width="1920" height="1080" alt="World map tab in ObserverLauncher, showing the explored area and waypoints of a Minecraft server world" loading="lazy" decoding="async">
-    </div>
-    <div class="hero-app-frame hero-app-front">
-      <div class="hero-app-bar"><span class="ha-dot"></span><span class="ha-dot"></span><span class="ha-dot"></span><span class="ha-title">observerlauncher</span><span class="ha-live">● LIVE</span></div>
-      <img src="./assets/shots/overview.png" width="1920" height="1080" alt="Overview tab in ObserverLauncher, showing a running Minecraft server with TPS, memory and a Start button" loading="eager" decoding="async">
-    </div>
-  </div>
-  <p class="hero-shot-cap choreo" data-choreo="5" data-i18n="cap.hero">Overview and the world map, as they look in the launcher.</p>
-  </div><!-- /hero-main -->
 
-  <!-- v6.0.0: the player inspector is the headline of this release, so it gets its own pair of
-       frames under the hero rather than being buried in the feature grid. Same card language. -->
-  <div class="hero-shots hero-shots-inspector choreo" data-choreo="6">
-    <figure class="hero-shot">
-      <img src="./assets/shots/player-inspector.png" width="1920" height="1080" alt="Player inspector in ObserverLauncher: a rotatable 3D model of the player with their skin and armor, beside the four headline stats and an All stats disclosure" loading="lazy" decoding="async">
-      <figcaption data-i18n="cap.inspector">The player inspector: a rotatable 3D model in the player's own skin and armor.</figcaption>
-    </figure>
-    <figure class="hero-shot">
-      <img src="./assets/shots/inventory.png" width="1918" height="1079" alt="Player inventory in ObserverLauncher with real item icons, stack counts and empty slots outlined" loading="lazy" decoding="async">
-      <figcaption data-i18n="cap.inventory">Inventory with real item icons, including items from mods.</figcaption>
-    </figure>
-  </div>
-  <div class="instrument choreo" data-choreo="7" aria-hidden="true">
-    <div class="pulse-wave" id="pulseWave"></div>
-    <div class="readouts">
-      <div class="readout"><span class="ro-label">TPS</span><b id="roTps" class="ok">20.0</b></div>
-      <div class="readout"><span class="ro-label">MSPT</span><b id="roMspt" class="ok">3.4</b></div>
-      <div class="readout"><span class="ro-label">CPU</span><b id="roCpu">18%</b></div>
-      <div class="readout"><span class="ro-label">RAM</span><b id="roRam">2.1 / 6 GB</b></div>
-      <div class="readout"><span class="ro-label">PLAYERS</span><b id="roPlayers">0</b></div>
+  <!-- Hero preview window -->
+  <div class="hero-window">
+    <div class="window-frame">
+      <div class="window-bar">
+        <div class="window-dots">
+          <span class="dot close"></span>
+          <span class="dot min"></span>
+          <span class="dot max"></span>
+        </div>
+        <span class="window-title">ObserverLauncher 6.1.0 — Minecraft 1.21.4 (Paper)</span>
+        <span class="window-live"><span class="live-dot"></span> LIVE</span>
+      </div>
+      <div class="window-content">
+        <img src="./assets/shots/overview.png" width="1920" height="1080" alt="ObserverLauncher Overview screen showing server status, live graphs and control buttons" loading="eager" decoding="async">
+        <div class="window-overlay-pill">
+          <span class="metric-pill"><b>TPS</b> 20.0</span>
+          <span class="metric-pill"><b>MSPT</b> 3.4ms</span>
+          <span class="metric-pill"><b>PLAYERS</b> 3 / 20</span>
+          <span class="metric-pill"><b>TUNNEL</b> Active</span>
+        </div>
+      </div>
     </div>
-  </div>
-  <a class="scroll-cue" href="#console-band" aria-label="Scroll down"><span class="scroll-cue-line"></span><span class="scroll-cue-label" data-i18n="hero.scroll">SCROLL</span></a>
-</section>
-
-<!-- ============ CONSOLE DEMO ============ -->
-<section class="band console-band" id="console-band" data-ch="02" data-name="Console">
-  <div class="console">
-    <div class="console-head"><span class="live-dot"></span><b data-i18n="console.title">Server console</b><span class="console-src" data-i18n="console.live">LIVE</span></div>
-    <pre class="console-body" id="consoleBody"></pre>
-    <form class="console-input" onsubmit="return false"><span class="prompt">›</span><input id="consoleInput" type="text" autocomplete="off" spellcheck="false" data-i18n-placeholder="console.ph" placeholder="Type a command — try: list, tps, spark healthreport"><span class="caret" aria-hidden="true"></span></form>
   </div>
 </section>
 
-<!-- ============ INTRO ============ -->
-<section class="band intro">
-  <div class="band-head">
-    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="intro.eyebrow">THE IDEA</span></p>
-    <h2 data-i18n="intro.title">A control panel, not a hosting service.</h2>
-  </div>
-  <div class="intro-grid">
-    <p data-i18n="intro.p1">Most people who want to host a Minecraft server for a few friends hit the same wall: a wall of terminal commands, a Java version that does not match, a firewall port that is closed, and a config file that breaks the server on the first run.</p>
-    <p data-i18n="intro.p2">ObserverLauncher does that work for you, on your own computer. There is no account to create and no server in the cloud. When you close the app, nothing keeps running.</p>
-  </div>
-</section>
-
-<!-- ============ WHY ============ -->
-<section class="band why-band" id="why" data-ch="03" data-name="Why">
-  <div class="band-head">
+<!-- ============ WHY / PAIN POINTS SOLVED ============ -->
+<section class="band why-band" id="why">
+  <div class="band-head text-center">
     <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="why.eyebrow">WHY OBSERVERLAUNCHER</span></p>
-    <h2 data-i18n="why.title">GUI for humans. Automation when you want it.</h2>
+    <h2 data-i18n="why.title">Say goodbye to terminal errors and router headaches.</h2>
+    <p class="band-sub" data-i18n="why.sub">Everything you need to play Minecraft together in one simple, beautiful desktop app.</p>
   </div>
-  <div class="why-grid">
-    <div class="why-card"><span class="why-num">01</span><b data-i18n="why.c1t">No terminal</b><p data-i18n="why.c1d">Set up and manage the whole server from a window — install, configure, monitor and back up without typing a single command.</p></div>
-    <div class="why-card"><span class="why-num">02</span><b data-i18n="why.c2t">Local-first</b><p data-i18n="why.c2d">The server and its data stay on your own machine. No account, no cloud, and nothing keeps running once you close the app.</p></div>
-    <div class="why-card"><span class="why-num">03</span><b data-i18n="why.c3t">Automation when you want it</b><p data-i18n="why.c3d">MCP lets an AI client handle repetitive or technical tasks on request — without taking over normal, hands-on management.</p></div>
+
+  <div class="why-grid-v2">
+    <!-- Card 1: Java -->
+    <article class="pain-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+      </div>
+      <span class="card-tag" data-i18n="why.c1tag">100% Automatic</span>
+      <h3 data-i18n="why.c1t">Zero Java mismatch errors</h3>
+      <p data-i18n="why.c1d">Minecraft 1.21 needs Java 21; 1.12 needs Java 8. ObserverLauncher automatically detects, downloads and isolates the exact Java runtime required for your server, keeping your computer clean.</p>
+    </article>
+
+    <!-- Card 2: Tunnel -->
+    <article class="pain-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+      </div>
+      <span class="card-tag" data-i18n="why.c2tag">No Port Forwarding</span>
+      <h3 data-i18n="why.c2t">Play with friends in 1 click</h3>
+      <p data-i18n="why.c2d">No more logging into your router or messing with NAT settings. ObserverLauncher comes with built-in tunneling (Playit.gg / Pinggy) that gives you a public address to share instantly.</p>
+    </article>
+
+    <!-- Card 3: Mods / Plugins -->
+    <article class="pain-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg>
+      </div>
+      <span class="card-tag" data-i18n="why.c3tag">Crash Prevention</span>
+      <h3 data-i18n="why.c3t">Safe Mod &amp; Plugin marketplace</h3>
+      <p data-i18n="why.c3d">Search and install mods and plugins directly from Modrinth, Hangar, and SpigotMC. The built-in conflict detector warns you of duplicate or incompatible mods before they crash your world.</p>
+    </article>
+
+    <!-- Card 4: 3D Inspection & Backups -->
+    <article class="pain-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <span class="card-tag" data-i18n="why.c4tag">Peace of Mind</span>
+      <h3 data-i18n="why.c4t">3D Player inspector &amp; 1-click backups</h3>
+      <p data-i18n="why.c4d">Inspect your friends' inventories and 3D skins, view live maps of explored areas, and take automatic ZIP backups before experimenting with new mods so you never lose progress.</p>
+    </article>
   </div>
 </section>
 
-<!-- ============ STATS ============ -->
-<section class="band stats-band">
-  <div class="stats-grid" id="statsGrid">
-    <div class="stat"><b class="stat-num" data-count="10">0</b><span data-i18n="stats.software">SERVER TYPES</span></div>
-    <div class="stat"><b class="stat-num" data-count="76">0</b><span data-i18n="stats.tools">MCP TOOLS</span></div>
-    <div class="stat"><b class="stat-num" data-count="7">0</b><span data-i18n="stats.langs">LANGUAGES</span></div>
-    <div class="stat"><b class="stat-num" data-count="0">0</b><span data-i18n="stats.telemetry">TELEMETRY</span></div>
+<!-- ============ INTERACTIVE SHOWCASE ============ -->
+<section class="band showcase-band" id="showcase">
+  <div class="band-head text-center">
+    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="showcase.eyebrow">SEE IT IN ACTION</span></p>
+    <h2 data-i18n="showcase.title">Built for humans, not servers in a datacenter.</h2>
+    <p class="band-sub" data-i18n="showcase.sub">Take a look inside the visual interface designed to make server hosting joyful.</p>
   </div>
-</section>
 
-<!-- ============ FEATURES ============ -->
-<section class="band" id="features" data-ch="04" data-name="Capabilities">
-  <div class="band-head">
-    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="features.eyebrow">CAPABILITIES</span></p>
-    <h2 data-i18n="features.title">Everything the setup needs.</h2>
-    <p class="band-sub" data-i18n="features.sub">The desktop app, a headless mode, a command line and Docker all share one backend.</p>
+  <div class="showcase-tabs" role="tablist" aria-label="Feature showcase tabs">
+    <button class="showcase-tab active" role="tab" aria-selected="true" aria-controls="panel-overview" id="tab-overview" data-tab="overview">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg>
+      <span data-i18n="showcase.tab1">Overview &amp; Control</span>
+    </button>
+    <button class="showcase-tab" role="tab" aria-selected="false" aria-controls="panel-players" id="tab-players" data-tab="players">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a7 7 0 0114 0v2"/></svg>
+      <span data-i18n="showcase.tab2">3D Player Inspector</span>
+    </button>
+    <button class="showcase-tab" role="tab" aria-selected="false" aria-controls="panel-map" id="tab-map" data-tab="map">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>
+      <span data-i18n="showcase.tab3">Live World Map</span>
+    </button>
+    <button class="showcase-tab" role="tab" aria-selected="false" aria-controls="panel-ai" id="tab-ai" data-tab="ai">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 00-4 4v2H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-2V6a4 4 0 00-4-4z"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/></svg>
+      <span data-i18n="showcase.tab4">AI / MCP Assistant</span>
+    </button>
   </div>
-  <div class="feat-grid" id="featGrid"></div>
-</section>
 
-<!-- ============ HOW IT WORKS ============ -->
-<section class="band how-band" id="how-it-works" data-ch="05" data-name="How it works">
-  <div class="band-head">
-    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="how.eyebrow">HOW IT WORKS</span></p>
-    <h2 data-i18n="how.title">Three steps to a running server.</h2>
-  </div>
-  <div class="how-grid">
-    <ol class="how-steps" id="howSteps">
-      <li class="how-step" data-step="1"><span class="hs-num">01</span><div><b data-i18n="how.s1t">Pick a folder</b><p data-i18n="how.s1d">Choose an empty folder, or let the launcher suggest one under Documents. It never overwrites an existing server jar.</p></div></li>
-      <li class="how-step" data-step="2"><span class="hs-num">02</span><div><b data-i18n="how.s2t">Choose software &amp; version</b><p data-i18n="how.s2d">Pick from ten server types and a live version list. Java is detected, and installed automatically if it is missing.</p></div></li>
-      <li class="how-step" data-step="3"><span class="hs-num">03</span><div><b data-i18n="how.s3t">Press Start</b><p data-i18n="how.s3d">The launcher downloads the jar, writes the config, opens the firewall when you ask, and starts the server. Watch it live in the Console.</p></div></li>
-    </ol>
-    <div class="how-visual" aria-hidden="true">
-      <div class="how-line"><i id="howLine"></i></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ BEGINNER ============ -->
-<section class="band beg-band" id="beginner" data-ch="06" data-name="Beginner">
-  <div class="beg-inner">
-    <div class="beg-copy">
-      <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="beg.eyebrow">NEW TO SERVERS</span></p>
-      <h2 data-i18n="beg.title">Never hosted a Minecraft server before? Start here.</h2>
-      <p data-i18n="beg.lead">Most guides assume you already know what a jar, a port and a config file are. Beginner mode skips all of that. Turn it on and the app shows only what you need to get a server running: a folder, a version, and a Start button.</p>
-      <a class="btn primary lg magnet beg-cta" href="#download" data-i18n="beg.cta">Download and start</a>
-    </div>
-    <div class="beg-list">
-      <div class="beg-card"><span class="bc-step">01</span><b data-i18n="beg.c1t">A calmer app</b><p data-i18n="beg.c1d">Beginner mode hides the advanced tools and keeps the essentials: Overview, Console, Players, Server properties and Settings.</p></div>
-      <div class="beg-card"><span class="bc-step">02</span><b data-i18n="beg.c2t">Guided setup</b><p data-i18n="beg.c2d">The wizard asks what kind of server you want, downloads it, and installs the right Java for you. No terminal, no commands to memorise.</p></div>
-      <div class="beg-card"><span class="bc-step">03</span><b data-i18n="beg.c3t">Share the address</b><p data-i18n="beg.c3d">When the server is running, a single card shows the address to send your friends, with a one-click way to share it over the internet.</p></div>
-      <div class="beg-card"><span class="bc-step">04</span><b data-i18n="beg.c4t">Nothing is locked away</b><p data-i18n="beg.c4d">A "Show all tools" button brings back every feature whenever you want, so you are never stuck in the simple view.</p></div>
-      <div class="beg-note"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v18M5 10l7-7 7 7"/></svg><span data-i18n="beg.note">Advanced users: everything below is still there, just one toggle away.</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SOFTWARE ============ -->
-<section class="band" id="software" data-ch="07" data-name="Compatibility">
-  <div class="band-head">
-    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="software.eyebrow">COMPATIBILITY</span></p>
-    <h2 data-i18n="software.title">Ten server types, one window.</h2>
-    <p class="band-sub" data-i18n="software.sub">Version lists are loaded live from each project's API — new Minecraft releases appear without an app update.</p>
-  </div>
-  <div class="soft-grid" id="softGrid"></div>
-  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
-</section>
-
-<!-- ============ REQUIREMENTS ============ -->
-<section class="band req-band">
-  <div class="band-head">
-    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="req.eyebrow">REQUIREMENTS</span></p>
-    <h2 data-i18n="req.title">Light enough for a laptop.</h2>
-  </div>
-  <div class="req-table" id="reqTable"></div>
-  <p class="req-note" data-i18n="req.note">No admin rights are needed. Java installs into your user folder, and elevation is requested only to open the Windows Firewall for a port.</p>
-</section>
-
-<!-- ============ LANGUAGES ============ -->
-<section class="band lang-band">
-  <div class="band-head">
-    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="langs.eyebrow">LANGUAGES</span></p>
-    <h2 data-i18n="langs.title">Seven languages, fully translated.</h2>
-  </div>
-  <div class="lang-chips" id="langChips"></div>
-</section>
-
-<!-- ============ AI / MCP ============ -->
-<section class="band ai-band" id="ai" data-ch="08" data-name="AI / MCP">
-  <div class="ai-inner">
-    <div class="ai-copy">
-      <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="ai.eyebrow">MCP / AI INTEGRATION</span></p>
-      <h2 data-i18n="ai.title">Let an AI run the boring parts.</h2>
-      <p data-i18n="ai.lead">ObserverLauncher can act as an MCP server, so an AI client reads and controls your server in natural language — 76 tools, exposed only on 127.0.0.1 with a fresh token each launch.</p>
-      <ul class="ai-list">
-        <li data-i18n="ai.item1">Server Doctor — diagnose, analyse the console, explain a crash, check TPS.</li>
-        <li data-i18n="ai.item2">Modpack builder — search the marketplace, plan exact versions, install in one confirmation.</li>
-        <li data-i18n="ai.item4">Composite workflows — prepare_and_start, safe_restart, and a full health report in one call.</li>
-        <li data-i18n="ai.item5">Config & network — validate server.properties, test the port, read the world and player files.</li>
-        <li data-i18n="ai.item6">Content control — install, list, enable or remove plugins, mods and datapacks.</li>
-        <li data-i18n="ai.item3">Every write and destroy call is written to an audit log the AI can read back.</li>
-        <li data-i18n="ai.item7">In-client charts: the metrics tool draws TPS, MSPT, CPU, RAM and player charts inside a supporting AI client.</li>
-      </ul>
-      <div class="ai-tiers">
-        <div class="ai-tier"><span class="at-tag read" data-i18n="ai.tierReadTag">READ</span><span data-i18n="ai.tierRead">Runs freely — status, metrics, logs, diagnosis, world data.</span></div>
-        <div class="ai-tier"><span class="at-tag write" data-i18n="ai.tierWriteTag">WRITE</span><span data-i18n="ai.tierWrite">Asks first — install, edit files, send a command.</span></div>
-        <div class="ai-tier"><span class="at-tag destroy" data-i18n="ai.tierDestroyTag">DESTROY</span><span data-i18n="ai.tierDestroy">Always asks — delete, restore. Stop / restart skip the prompt when Auto-allow-write is on.</span></div>
+  <div class="showcase-content">
+    <!-- Panel 1: Overview -->
+    <div class="showcase-panel active" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+      <div class="panel-layout">
+        <div class="panel-copy">
+          <span class="panel-tag" data-i18n="showcase.p1tag">Live Dashboard</span>
+          <h3 data-i18n="showcase.p1t">Monitor your server at a single glance</h3>
+          <p data-i18n="showcase.p1d">Real-time TPS, MSPT, CPU and RAM graphs with plain-language alerts when your server lags. One button to Start, Stop, or Restart without ever opening a terminal.</p>
+          <ul class="panel-bullets">
+            <li data-i18n="showcase.p1b1">Instant server start and stop with automatic world save</li>
+            <li data-i18n="showcase.p1b2">Live memory and tick-rate graphs with lag diagnosis</li>
+            <li data-i18n="showcase.p1b3">Beginner mode toggle to hide advanced options until you want them</li>
+          </ul>
+        </div>
+        <div class="panel-visual">
+          <img src="./assets/shots/overview.png" width="1920" height="1080" alt="ObserverLauncher Overview Tab" loading="lazy">
+        </div>
       </div>
     </div>
-    <figure class="ai-shot">
-      <div class="ai-term-head"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="ai-term-title">observerlauncher · settings / MCP</span></div>
-      <img src="./assets/shots/MCP.png" width="1918" height="1080" alt="MCP / AI integration settings in ObserverLauncher, with a Copy MCP config button" loading="lazy" decoding="async">
-      <figcaption class="shot-cap" data-i18n="cap.mcp">The MCP / AI integration settings, where you copy the client config.</figcaption>
-    </figure>
-  </div>
-</section>
 
-<!-- ============ PRIVACY ============ -->
-<section class="band privacy-band" id="privacy" data-ch="09" data-name="Privacy">
-  <div class="band-head">
-    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="privacy.eyebrow">DATA &amp; PRIVACY</span></p>
-    <h2 data-i18n="privacy.title">Nothing leaves your machine.</h2>
-  </div>
-  <div class="privacy-grid">
-    <div class="priv-card"><span class="priv-num">01</span><b data-i18n="privacy.c1t">No account</b><p data-i18n="privacy.c1d">There is nothing to sign up for and no login.</p></div>
-    <div class="priv-card"><span class="priv-num">02</span><b data-i18n="privacy.c2t">No telemetry</b><p data-i18n="privacy.c2d">No analytics, no usage statistics, no crash reporting.</p></div>
-    <div class="priv-card"><span class="priv-num">03</span><b data-i18n="privacy.c3t">No uploads</b><p data-i18n="privacy.c3d">Your world, configs and player data never leave the PC.</p></div>
-    <div class="priv-card"><span class="priv-num">04</span><b data-i18n="privacy.c4t">Official sources only</b><p data-i18n="privacy.c4d">Jars come from Mojang, PaperMC, Purpur, Leaf, Fabric and Forge. Mods from Modrinth, Hangar and SpigotMC.</p></div>
-  </div>
-</section>
-
-<!-- ============ LIMITATIONS ============ -->
-<section class="band limits-band">
-  <div class="band-head">
-    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="lim.eyebrow">HONEST LIMITS</span></p>
-    <h2 data-i18n="lim.title">What it does not do.</h2>
-    <p class="band-sub" data-i18n="lim.sub">No tool is perfect. Here is exactly where ObserverLauncher stops.</p>
-  </div>
-  <ul class="limits-list" id="limitsList"></ul>
-</section>
-
-<!-- ============ OPEN SOURCE ============ -->
-<section class="band oss-band">
-  <div class="oss-inner">
-    <div class="oss-copy">
-      <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="oss.eyebrow">OPEN SOURCE</span></p>
-      <h2 data-i18n="oss.title">Apache-2.0, no bundler, plain scripts.</h2>
-      <p data-i18n="oss.lead">The renderer is classic scripts in numeric load order, the backend is plain side-effect-free modules, and the MCP bridge runs on its own binary. Read the code, file an issue, or send a pull request.</p>
-      <div class="oss-links">
-        <a class="btn ghost" href="https://github.com/Kag4286/ObserverLauncher" target="_blank" rel="noopener" data-i18n="oss.repo">Repository</a>
-        <a class="btn ghost" href="https://github.com/Kag4286/ObserverLauncher/blob/main/CHANGELOG.md" target="_blank" rel="noopener" data-i18n="oss.changelog">Changelog</a>
-        <a class="btn ghost" href="https://github.com/Kag4286/ObserverLauncher/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" data-i18n="oss.contributing">Contributing</a>
+    <!-- Panel 2: Player Inspector -->
+    <div class="showcase-panel" id="panel-players" role="tabpanel" aria-labelledby="tab-players" hidden>
+      <div class="panel-layout">
+        <div class="panel-copy">
+          <span class="panel-tag" data-i18n="showcase.p2tag">3D Inspection</span>
+          <h3 data-i18n="showcase.p2t">Real skins, inventory slots, and armor</h3>
+          <p data-i18n="showcase.p2d">Inspect online, whitelisted, or banned players with rotatable 3D player skins. View their exact inventory, Ender chest, and health stats with real game icons (including modded items).</p>
+          <ul class="panel-bullets">
+            <li data-i18n="showcase.p2b1">Rotatable 3D model dressed in the player's own skin and armor</li>
+            <li data-i18n="showcase.p2b2">Interactive inventory grid with stack counts and mod items</li>
+            <li data-i18n="showcase.p2b3">Kick, ban, OP, or whitelist players with a single click</li>
+          </ul>
+        </div>
+        <div class="panel-visual dual-visual">
+          <img src="./assets/shots/player-inspector.png" width="1920" height="1080" alt="Player 3D Inspector" loading="lazy">
+          <img src="./assets/shots/inventory.png" width="1918" height="1079" alt="Player Inventory Grid" loading="lazy">
+        </div>
       </div>
     </div>
-    <div class="oss-diagram" aria-hidden="true">
-      <div class="oss-layer"><span class="ol-tag">RENDERER</span><span class="ol-note">UI · no Node access</span></div>
-      <div class="oss-arrow">↓</div>
-      <div class="oss-layer"><span class="ol-tag">PRELOAD</span><span class="ol-note">contextBridge · the only bridge</span></div>
-      <div class="oss-arrow">↓</div>
-      <div class="oss-layer"><span class="ol-tag">MAIN</span><span class="ol-note">composition root · feature modules</span></div>
-      <div class="oss-arrow">↓</div>
-      <div class="oss-layer"><span class="ol-tag">HEADLESS</span><span class="ol-note">same backend, no window · observer CLI · Docker</span></div>
+
+    <!-- Panel 3: World Map -->
+    <div class="showcase-panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map" hidden>
+      <div class="panel-layout">
+        <div class="panel-copy">
+          <span class="panel-tag" data-i18n="showcase.p3tag">World Visualization</span>
+          <h3 data-i18n="showcase.p3t">Explore your server world in real-time</h3>
+          <p data-i18n="showcase.p3d">Rendered directly from your world save files: see discovered terrain, biomes, spawn location, and live player coordinates with custom waypoints you can manage.</p>
+          <ul class="panel-bullets">
+            <li data-i18n="showcase.p3b1">Real terrain and biome map generated directly from save chunks</li>
+            <li data-i18n="showcase.p3b2">Live player coordinates and world spawn marker</li>
+            <li data-i18n="showcase.p3b3">Create and teleport to waypoints (bases, nether portals, mines)</li>
+          </ul>
+        </div>
+        <div class="panel-visual">
+          <img src="./assets/shots/worldmap.png" width="1920" height="1080" alt="Live World Map" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 4: AI / MCP -->
+    <div class="showcase-panel" id="panel-ai" role="tabpanel" aria-labelledby="tab-ai" hidden>
+      <div class="panel-layout">
+        <div class="panel-copy">
+          <span class="panel-tag" data-i18n="showcase.p4tag">Automation</span>
+          <h3 data-i18n="showcase.p4t">Connect Claude or ChatGPT to manage your server</h3>
+          <p data-i18n="showcase.p4d">ObserverLauncher features an integrated Model Context Protocol (MCP) server. Ask your favorite AI in natural language to diagnose crash logs, recommend plugins, or build modpacks.</p>
+          <ul class="panel-bullets">
+            <li data-i18n="showcase.p4b1">Crash Doctor: AI analyzes console logs and explains fixes in plain words</li>
+            <li data-i18n="showcase.p4b2">Natural language modpack builder with compatibility verification</li>
+            <li data-i18n="showcase.p4b3">100% Localhost security with freshly generated session tokens</li>
+          </ul>
+        </div>
+        <div class="panel-visual">
+          <img src="./assets/shots/MCP.png" width="1918" height="1080" alt="AI and MCP Settings" loading="lazy">
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ============ DOWNLOAD ============ -->
-<section class="band download-band" id="download" data-ch="10" data-name="Download">
-  <div class="dl-inner">
-    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="dl.eyebrow">DOWNLOAD</span></p>
-    <h2 data-i18n="dl.title">Get it and press Start.</h2>
-    <div class="dl-grid">
-      <a class="dl-card magnet" href="https://github.com/Kag4286/ObserverLauncher/releases/latest" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M3 5.5L10.5 4.5v7H3zM3 18.5l7.5 1v-7H3zM11.5 4.4L21 3v8.5h-9.5zM11.5 19.6L21 21v-8.5h-9.5z"/></svg>
-        <b>Windows 10/11</b><span data-i18n="dl.win">ObserverLauncher-6.1.0-setup.exe</span>
+<!-- ============ SOFTWARE SUPPORTED ============ -->
+<section class="band soft-band" id="software">
+  <div class="band-head text-center">
+    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="soft.eyebrow">COMPATIBILITY</span></p>
+    <h2 data-i18n="soft.title">Runs all your favorite server software.</h2>
+    <p class="band-sub" data-i18n="soft.sub">Version lists load live from official project repositories so new Minecraft releases are available instantly.</p>
+  </div>
+
+  <div class="soft-grid-v2">
+    <div class="soft-item">
+      <div class="soft-head"><b>Paper</b><span class="tag-rec">Recommended</span></div>
+      <p>High performance server with extensive plugin support for community play.</p>
+    </div>
+    <div class="soft-item">
+      <div class="soft-head"><b>Fabric</b><span class="tag-mod">Modded</span></div>
+      <p>Lightweight and modular modding engine, fast updates for latest Minecraft versions.</p>
+    </div>
+    <div class="soft-item">
+      <div class="soft-head"><b>Forge</b><span class="tag-mod">Modded</span></div>
+      <p>The classic ecosystem for massive modpacks with hundreds of mods.</p>
+    </div>
+    <div class="soft-item">
+      <div class="soft-head"><b>NeoForge</b><span class="tag-mod">Modded</span></div>
+      <p>The modern, community-driven continuation of the Forge modding platform.</p>
+    </div>
+    <div class="soft-item">
+      <div class="soft-head"><b>Purpur</b><span class="tag-perf">Ultra TPS</span></div>
+      <p>Drop-in replacement for Paper with enhanced gameplay configurability and speed.</p>
+    </div>
+    <div class="soft-item">
+      <div class="soft-head"><b>Vanilla</b><span class="tag-vanilla">Official</span></div>
+      <p>The original, unmodded Minecraft server directly from Mojang Studios.</p>
+    </div>
+    <div class="soft-item">
+      <div class="soft-head"><b>Folia &amp; Leaf</b><span class="tag-perf">Multi-thread</span></div>
+      <p>Cutting-edge multithreaded servers designed for massive player counts.</p>
+    </div>
+    <div class="soft-item">
+      <div class="soft-head"><b>Velocity &amp; Spigot</b><span class="tag-proxy">Network</span></div>
+      <p>High-speed proxy networking and classic craftbukkit plugin foundations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ POWER FEATURE: AI ASSISTANT ============ -->
+<section class="band ai-section" id="ai">
+  <div class="ai-box">
+    <div class="ai-text">
+      <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="ai.eyebrow">OPTIONAL SUPERPOWER</span></p>
+      <h2 data-i18n="ai.title">Let an AI assistant handle the technical chores.</h2>
+      <p class="ai-lead" data-i18n="ai.lead">ObserverLauncher acts as a local MCP (Model Context Protocol) server. Hook it up to Claude Desktop, ChatGPT, or Cursor to troubleshoot crashes and manage modpacks through simple conversation.</p>
+      
+      <div class="ai-perks">
+        <div class="ai-perk">
+          <div class="perk-icon">🩺</div>
+          <div>
+            <b data-i18n="ai.p1t">Server Crash Doctor</b>
+            <p data-i18n="ai.p1d">When a server stops unexpectedly, ask your AI: "Why did the server crash?" It reads the latest logs, points out the conflicting mod, and suggests the fix.</p>
+          </div>
+        </div>
+        <div class="ai-perk">
+          <div class="perk-icon">📦</div>
+          <div>
+            <b data-i18n="ai.p2t">Natural Language Modpack Setup</b>
+            <p data-i18n="ai.p2d">Say: "Install Create and optimization mods for Fabric 1.21.1." The AI searches Modrinth, verifies compatibility, and prepares installation for your confirmation.</p>
+          </div>
+        </div>
+        <div class="ai-perk">
+          <div class="perk-icon">🔒</div>
+          <div>
+            <b data-i18n="ai.p3t">Local &amp; Secure by Design</b>
+            <p data-i18n="ai.p3d">Runs exclusively on 127.0.0.1 with random tokens generated per session. Any write or destructive actions require explicit user approval.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST & FAQ ============ -->
+<section class="band faq-band" id="faq">
+  <div class="band-head text-center">
+    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="faq.eyebrow">HONEST &amp; TRANSPARENT</span></p>
+    <h2 data-i18n="faq.title">Frequently Asked Questions</h2>
+    <p class="band-sub" data-i18n="faq.sub">Everything you need to know about hosting locally with ObserverLauncher.</p>
+  </div>
+
+  <!-- Trust badges -->
+  <div class="trust-grid">
+    <div class="trust-card">
+      <span class="trust-icon">🏠</span>
+      <b data-i18n="trust.t1">100% Local</b>
+      <p data-i18n="trust.d1">Your worlds, configs, and player data never leave your PC.</p>
+    </div>
+    <div class="trust-card">
+      <span class="trust-icon">🔓</span>
+      <b data-i18n="trust.t2">No Account Needed</b>
+      <p data-i18n="trust.d2">No registration, no emails, no logins, no cloud lock-in.</p>
+    </div>
+    <div class="trust-card">
+      <span class="trust-icon">🛡️</span>
+      <b data-i18n="trust.t3">Zero Telemetry</b>
+      <p data-i18n="trust.d3">No background tracking, no analytics, no advertisements.</p>
+    </div>
+    <div class="trust-card">
+      <span class="trust-icon">⚡</span>
+      <b data-i18n="trust.t4">Zero Idle Drain</b>
+      <p data-i18n="trust.d4">Closing the app releases 100% of memory and CPU instantly.</p>
+    </div>
+  </div>
+
+  <!-- FAQ Accordion -->
+  <div class="faq-accordion">
+    <details class="faq-item" open>
+      <summary><span data-i18n="faq.q1">Do I have to pay anything to host a server?</span><svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="faq-answer"><p data-i18n="faq.a1">No, ObserverLauncher is 100% free and open-source under the Apache-2.0 license. The server runs directly on your computer hardware, meaning there are no subscriptions or monthly hosting bills.</p></div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span data-i18n="faq.q2">Can friends on phones (Minecraft Bedrock) join my Java server?</span><svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="faq-answer"><p data-i18n="faq.a2">Yes! ObserverLauncher provides 1-click Bedrock crossplay support using GeyserMC. Mobile, console, and PC players can join and play together in the same survival world seamlessly.</p></div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span data-i18n="faq.q3">How do my friends connect without opening router ports?</span><svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="faq-answer"><p data-i18n="faq.a3">In the Network tab, simply enable the built-in tunnel (Playit.gg or Pinggy). ObserverLauncher generates a public server address that you can send to your friends. They paste it into Minecraft Multiplayer and connect immediately.</p></div>
+    </details>
+
+    <details class="faq-item">
+      <summary><span data-i18n="faq.q4">Will running a server make my computer laggy when I am not playing?</span><svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <div class="faq-answer"><p data-i18n="faq.a4">Not at all. When you press Stop or close ObserverLauncher, all server processes terminate cleanly. No background daemons or services stay running on your computer.</p></div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD SECTION ============ -->
+<section class="band download-band" id="download">
+  <div class="dl-container">
+    <div class="band-head text-center">
+      <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="dl.eyebrow">DOWNLOAD FREE</span></p>
+      <h2 data-i18n="dl.title">Start your world in 60 seconds.</h2>
+      <p class="band-sub" data-i18n="dl.sub">Choose your operating system below. Automatic updates are built in.</p>
+    </div>
+
+    <div class="dl-cards">
+      <!-- Windows Card -->
+      <a class="dl-card magnet" id="dlWinCard" href="https://github.com/Kag4286/ObserverLauncher/releases/latest" target="_blank" rel="noopener">
+        <div class="dl-badge-os" id="winRecBadge" data-i18n="dl.recWin">Recommended for your PC</div>
+        <div class="dl-icon win">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M3 5.5L10.5 4.5v7H3zM3 18.5l7.5 1v-7H3zM11.5 4.4L21 3v8.5h-9.5zM11.5 19.6L21 21v-8.5h-9.5z"/></svg>
+        </div>
+        <div class="dl-info">
+          <h3>Windows 10 / 11</h3>
+          <span class="dl-filename" data-i18n="dl.win">ObserverLauncher-6.1.0-setup.exe</span>
+          <span class="dl-desc" data-i18n="dl.winDesc">64-bit installer with built-in auto updater</span>
+        </div>
+        <span class="btn primary dl-btn" data-i18n="cta.download">Download</span>
       </a>
-      <a class="dl-card magnet" href="https://github.com/Kag4286/ObserverLauncher/releases/latest" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0012 2z"/></svg>
-        <b>Linux</b><span data-i18n="dl.linux">ObserverLauncher-6.1.0.AppImage</span>
+
+      <!-- Linux Card -->
+      <a class="dl-card magnet" id="dlLinuxCard" href="https://github.com/Kag4286/ObserverLauncher/releases/latest" target="_blank" rel="noopener">
+        <div class="dl-badge-os" id="linuxRecBadge" data-i18n="dl.recLinux" style="display:none;">Recommended for your PC</div>
+        <div class="dl-icon linux">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor"><path d="M12 2a10 10 0 00-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0012 2z"/></svg>
+        </div>
+        <div class="dl-info">
+          <h3>Linux 64-bit</h3>
+          <span class="dl-filename" data-i18n="dl.linux">ObserverLauncher-6.1.0.AppImage</span>
+          <span class="dl-desc" data-i18n="dl.linuxDesc">Universal AppImage for Ubuntu, Fedora, Arch</span>
+        </div>
+        <span class="btn ghost dl-btn" data-i18n="cta.download">Download</span>
       </a>
     </div>
-    <p class="dl-note" data-i18n="dl.note">Auto-update is built in for the installer and the AppImage. No admin rights needed.</p>
-    <p class="dl-note" data-i18n="dl.signing">The Windows installer is not code-signed yet - SmartScreen may warn. Click More info then Run anyway.</p>
-    <pre class="dl-src"><code>git clone https://github.com/Kag4286/ObserverLauncher<br>npm install &amp;&amp; npm start</code></pre>
+
+    <p class="dl-note" data-i18n="dl.signing">Windows installer note: The binary is not commercially code-signed yet. If Windows SmartScreen shows a prompt, click "More info" then "Run anyway".</p>
+    
+    <div class="dl-source-box">
+      <span class="src-label" data-i18n="dl.srcLabel">Or run directly from source code:</span>
+      <pre><code>git clone https://github.com/Kag4286/ObserverLauncher<br>npm install &amp;&amp; npm start</code></pre>
+    </div>
   </div>
 </section>
 
@@ -420,20 +518,31 @@
 <!-- ============ FOOTER ============ -->
 <footer class="site-foot">
   <div class="foot-main">
-    <div class="foot-brand"><b>ObserverLauncher</b><p data-i18n="foot.tagline">A local control panel for Minecraft: Java Edition servers.</p></div>
+    <div class="foot-brand">
+      <b>ObserverLauncher</b>
+      <p data-i18n="foot.tagline">A modern desktop control panel for Minecraft: Java Edition servers.</p>
+    </div>
     <div class="foot-cols">
-      <div><b data-i18n="foot.project">Project</b><a href="https://github.com/Kag4286/ObserverLauncher" target="_blank" rel="noopener">GitHub</a><a href="./changelog.html" data-i18n="foot.changelog">Changelog</a><a href="https://github.com/Kag4286/ObserverLauncher/blob/main/LICENSE" target="_blank" rel="noopener" data-i18n="foot.license">License (Apache-2.0)</a></div>
-      <div><b data-i18n="foot.community">Community</b><a href="https://github.com/Kag4286/ObserverLauncher/issues" target="_blank" rel="noopener" data-i18n="foot.issues">Issues</a><a href="https://github.com/Kag4286/ObserverLauncher/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" data-i18n="foot.contributing">Contributing</a></div>
+      <div>
+        <b data-i18n="foot.project">Project</b>
+        <a href="https://github.com/Kag4286/ObserverLauncher" target="_blank" rel="noopener">GitHub</a>
+        <a href="./changelog.html" data-i18n="foot.changelog">Changelog</a>
+        <a href="https://github.com/Kag4286/ObserverLauncher/blob/main/LICENSE" target="_blank" rel="noopener" data-i18n="foot.license">License (Apache-2.0)</a>
+      </div>
+      <div>
+        <b data-i18n="foot.community">Community</b>
+        <a href="https://github.com/Kag4286/ObserverLauncher/issues" target="_blank" rel="noopener" data-i18n="foot.issues">Issues</a>
+        <a href="https://github.com/Kag4286/ObserverLauncher/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener" data-i18n="foot.contributing">Contributing</a>
+      </div>
     </div>
   </div>
   <div class="foot-legal">
-    <p data-i18n="foot.disclaimer">ObserverLauncher is an unofficial tool, not affiliated with, endorsed by, or associated with Mojang, Microsoft, or any server-software project. Minecraft is a trademark of Mojang Synergies AB.</p>
-    <p data-i18n="foot.eula">Running a server requires accepting the Minecraft End User License Agreement. No Mojang game assets are bundled.</p>
+    <p data-i18n="foot.disclaimer">ObserverLauncher is an unofficial community tool, not affiliated with, endorsed by, or associated with Mojang, Microsoft, or any server-software project. Minecraft is a trademark of Mojang Synergies AB.</p>
+    <p data-i18n="foot.eula">Hosting a server requires agreeing to the Minecraft End User License Agreement (EULA). No proprietary Mojang game assets are bundled.</p>
   </div>
 </footer>
 
 <script src="./js/i18n.js"></script>
-<script src="./js/shader.js"></script>
 <script src="./js/motion.js"></script>
 <script src="./js/main.js"></script>
 </body>
