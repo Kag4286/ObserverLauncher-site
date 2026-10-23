@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ObserverLauncher — Host your Minecraft server in 60 seconds</title>
-<meta name="description" content="A modern desktop control panel for Minecraft: Java Edition servers. Automatic Java, built-in tunnels, 3D player inspection, and zero terminal commands. Free & open source.">
-<meta name="keywords" content="Minecraft Java Edition, Minecraft server, local Minecraft server, server control panel, Minecraft server management, MCP, Model Context Protocol, Playit tunnel">
+<meta name="description" content="A modern desktop control panel for Minecraft: Java Edition servers. Automatic Java isolation, built-in tunnels, 3D player inspection, full MCP AI automation, and zero terminal commands. Free & open source.">
+<meta name="keywords" content="Minecraft Java Edition, Minecraft server, local Minecraft server, server control panel, Minecraft server management, MCP, Model Context Protocol, Playit tunnel, Geyser Bedrock">
 <link rel="canonical" href="https://observerlauncher-site.kag4286.workers.dev/">
 <meta property="og:title" content="ObserverLauncher — Host your Minecraft server in 60 seconds">
-<meta property="og:description" content="A modern desktop control panel for Minecraft: Java Edition servers. Automatic Java, built-in tunnels, and zero terminal commands.">
+<meta property="og:description" content="A modern desktop control panel for Minecraft: Java Edition servers. Automatic Java isolation, built-in tunnels, and full MCP AI integration.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://observerlauncher-site.kag4286.workers.dev/">
 <meta property="og:image" content="https://observerlauncher-site.kag4286.workers.dev/assets/shots/overview.png">
 <meta property="og:site_name" content="ObserverLauncher">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ObserverLauncher — Host your Minecraft server in 60 seconds">
-<meta name="twitter:description" content="A modern desktop control panel for Minecraft: Java Edition servers. Automatic Java, built-in tunnels, and zero terminal commands.">
+<meta name="twitter:description" content="A modern desktop control panel for Minecraft: Java Edition servers. Automatic Java isolation, built-in tunnels, and full MCP AI integration.">
 <meta name="twitter:image" content="https://observerlauncher-site.kag4286.workers.dev/assets/shots/overview.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,7 @@
       "license": "https://www.apache.org/licenses/LICENSE-2.0",
       "url": "https://observerlauncher-site.kag4286.workers.dev/",
       "downloadUrl": "https://github.com/Kag4286/ObserverLauncher/releases/latest",
-      "description": "A modern desktop control panel for hosting a Minecraft: Java Edition server on your PC without terminal commands. Automatic Java, built-in tunnels, 3D player inspection.",
+      "description": "A modern desktop control panel for hosting a Minecraft: Java Edition server on your PC without terminal commands. Automatic Java isolation, built-in tunnels, 3D player inspection, and 76 MCP tools.",
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     },
     {
@@ -47,16 +47,16 @@
       "step": [
         { "@type": "HowToStep", "position": 1, "name": "Pick a folder", "text": "Choose an empty folder or let the launcher suggest one." },
         { "@type": "HowToStep", "position": 2, "name": "Choose software & version", "text": "Pick from Paper, Fabric, Purpur, Forge or Vanilla. Java installs automatically." },
-        { "@type": "HowToStep", "position": 3, "name": "Press Start & Play", "text": "The server starts instantly with built-in tunnel support for friends." }
+        { "@type": "HowToStep", "position": 3, "name": "Press Start & Play", "text": "The server starts with built-in tunnel support for friends." }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Can I host a Minecraft server for free on my own computer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ObserverLauncher is 100% free and open-source under Apache-2.0. The server runs directly on your PC with zero subscription or cloud hosting bills." } },
+        { "@type": "Question", "name": "Can I host a Minecraft server for free on my own computer?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. ObserverLauncher is free and open-source under Apache-2.0. The server runs directly on your PC with zero subscription or cloud hosting bills." } },
         { "@type": "Question", "name": "Do I need to know how to use a terminal or open router ports?", "acceptedAnswer": { "@type": "Answer", "text": "No. ObserverLauncher handles Java installation, firewall configuration, and offers 1-click built-in tunneling (Playit.gg / Pinggy) so friends can join over the internet without touching your router." } },
         { "@type": "Question", "name": "Does it work on Windows and Linux?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, ObserverLauncher runs natively on 64-bit Windows 10/11 and modern Linux distributions." } },
-        { "@type": "Question", "name": "Does ObserverLauncher collect my data or require an account?", "acceptedAnswer": { "@type": "Answer", "text": "No. There is no account, no telemetry and no tracking. All world data and configs stay 100% on your machine." } }
+        { "@type": "Question", "name": "Does ObserverLauncher collect my data or require an account?", "acceptedAnswer": { "@type": "Answer", "text": "No. There is no account, no telemetry and no tracking. All world data and configs stay on your machine." } }
       ]
     }
   ]
@@ -81,8 +81,9 @@
   <nav class="site-nav" aria-label="Main Navigation">
     <a href="#why" data-i18n="nav.why">Why Observer</a>
     <a href="#showcase" data-i18n="nav.showcase">Showcase</a>
+    <a href="#features" data-i18n="nav.features">Features</a>
+    <a href="#mcp" data-i18n="nav.mcp">MCP / AI</a>
     <a href="#software" data-i18n="nav.software">Software</a>
-    <a href="#ai" data-i18n="nav.ai">AI / MCP</a>
     <a href="#faq" data-i18n="nav.faq">FAQ</a>
     <a href="./changelog.html" data-i18n="nav.changelog">Changelog</a>
   </nav>
@@ -109,8 +110,9 @@
 <nav class="mobile-menu" id="mobileMenu" hidden aria-label="Mobile Navigation">
   <a href="#why" data-i18n="nav.why">Why Observer</a>
   <a href="#showcase" data-i18n="nav.showcase">Showcase</a>
+  <a href="#features" data-i18n="nav.features">Features</a>
+  <a href="#mcp" data-i18n="nav.mcp">MCP / AI</a>
   <a href="#software" data-i18n="nav.software">Software</a>
-  <a href="#ai" data-i18n="nav.ai">AI / MCP</a>
   <a href="#faq" data-i18n="nav.faq">FAQ</a>
   <a href="#download" data-i18n="nav.download">Download</a>
   <a href="./changelog.html" data-i18n="nav.changelog">Changelog</a>
@@ -123,7 +125,7 @@
   <div class="hero-inner">
     <div class="hero-badge">
       <span class="badge-dot"></span>
-      <span data-i18n="hero.badge">New release 6.1.0 • Free & Open Source</span>
+      <span data-i18n="hero.badge">Release 6.1.0 • Free & Open Source</span>
     </div>
     <h1 data-i18n-html="hero.title">Host your Minecraft server in 60 seconds.<br>No terminal required.</h1>
     <p class="hero-lead" data-i18n="hero.lead">ObserverLauncher handles Java runtimes, firewall rules, and server configurations automatically. Share a link with your friends through built-in tunnels without touching your router.</p>
@@ -141,8 +143,8 @@
 
     <ul class="hero-facts">
       <li data-i18n="hero.fact1">No account needed</li>
-      <li data-i18n="hero.fact2">100% Local on your PC</li>
-      <li data-i18n="hero.fact3">Zero telemetry or tracking</li>
+      <li data-i18n="hero.fact2">Runs locally on your PC</li>
+      <li data-i18n="hero.fact3">No telemetry or tracking</li>
       <li data-i18n="hero.fact4">Windows &amp; Linux</li>
     </ul>
   </div>
@@ -184,9 +186,9 @@
     <!-- Card 1: Java -->
     <article class="pain-card">
       <div class="card-icon">
-        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
       </div>
-      <span class="card-tag" data-i18n="why.c1tag">100% Automatic</span>
+      <span class="card-tag" data-i18n="why.c1tag">Automated Runtime</span>
       <h3 data-i18n="why.c1t">Zero Java mismatch errors</h3>
       <p data-i18n="why.c1d">Minecraft 1.21 needs Java 21; 1.12 needs Java 8. ObserverLauncher automatically detects, downloads and isolates the exact Java runtime required for your server, keeping your computer clean.</p>
     </article>
@@ -194,7 +196,7 @@
     <!-- Card 2: Tunnel -->
     <article class="pain-card">
       <div class="card-icon">
-        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
       </div>
       <span class="card-tag" data-i18n="why.c2tag">No Port Forwarding</span>
       <h3 data-i18n="why.c2t">Play with friends in 1 click</h3>
@@ -204,7 +206,7 @@
     <!-- Card 3: Mods / Plugins -->
     <article class="pain-card">
       <div class="card-icon">
-        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg>
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zM9 12l2 2 4-4"/></svg>
       </div>
       <span class="card-tag" data-i18n="why.c3tag">Crash Prevention</span>
       <h3 data-i18n="why.c3t">Safe Mod &amp; Plugin marketplace</h3>
@@ -214,7 +216,7 @@
     <!-- Card 4: 3D Inspection & Backups -->
     <article class="pain-card">
       <div class="card-icon">
-        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
       </div>
       <span class="card-tag" data-i18n="why.c4tag">Peace of Mind</span>
       <h3 data-i18n="why.c4t">3D Player inspector &amp; 1-click backups</h3>
@@ -245,8 +247,8 @@
       <span data-i18n="showcase.tab3">Live World Map</span>
     </button>
     <button class="showcase-tab" role="tab" aria-selected="false" aria-controls="panel-ai" id="tab-ai" data-tab="ai">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 00-4 4v2H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2h-2V6a4 4 0 00-4-4z"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/></svg>
-      <span data-i18n="showcase.tab4">AI / MCP Assistant</span>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg>
+      <span data-i18n="showcase.tab4">AI / MCP Settings</span>
     </button>
   </div>
 
@@ -313,19 +315,178 @@
     <div class="showcase-panel" id="panel-ai" role="tabpanel" aria-labelledby="tab-ai" hidden>
       <div class="panel-layout">
         <div class="panel-copy">
-          <span class="panel-tag" data-i18n="showcase.p4tag">Automation</span>
-          <h3 data-i18n="showcase.p4t">Connect Claude or ChatGPT to manage your server</h3>
-          <p data-i18n="showcase.p4d">ObserverLauncher features an integrated Model Context Protocol (MCP) server. Ask your favorite AI in natural language to diagnose crash logs, recommend plugins, or build modpacks.</p>
+          <span class="panel-tag" data-i18n="showcase.p4tag">Automation Settings</span>
+          <h3 data-i18n="showcase.p4t">1-Click MCP Setup for AI Assistants</h3>
+          <p data-i18n="showcase.p4d">ObserverLauncher features a built-in Model Context Protocol (MCP) server. Copy the ready-to-paste JSON snippet to connect Claude Desktop, ChatGPT, or Cursor in seconds.</p>
           <ul class="panel-bullets">
-            <li data-i18n="showcase.p4b1">Crash Doctor: AI analyzes console logs and explains fixes in plain words</li>
-            <li data-i18n="showcase.p4b2">Natural language modpack builder with compatibility verification</li>
-            <li data-i18n="showcase.p4b3">100% Localhost security with freshly generated session tokens</li>
+            <li data-i18n="showcase.p4b1">Instant connection config for Claude Desktop and MCP clients</li>
+            <li data-i18n="showcase.p4b2">Full access to 76 specialized Minecraft server management tools</li>
+            <li data-i18n="showcase.p4b3">Restricted to 127.0.0.1 with random per-session authorization tokens</li>
           </ul>
         </div>
         <div class="panel-visual">
           <img src="./assets/shots/MCP.png" width="1918" height="1080" alt="AI and MCP Settings" loading="lazy">
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FULL FEATURE SPECTRUM ============ -->
+<section class="band feat-spectrum-band" id="features">
+  <div class="band-head text-center">
+    <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="feat.eyebrow">COMPLETE TOOLKIT</span></p>
+    <h2 data-i18n="feat.title">Everything your Minecraft server actually needs.</h2>
+    <p class="band-sub" data-i18n="feat.sub">Packed with powerful built-in utilities so you don't need dozens of third-party scripts.</p>
+  </div>
+
+  <div class="feat-grid-v3">
+    <!-- Feature 1: Multi-Instance -->
+    <div class="feat-card-v3">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+      </div>
+      <h3 data-i18n="feat.c1t">Multi-Instance Management</h3>
+      <p data-i18n="feat.c1d">Run and switch between multiple servers in one window. Each server has its own folder, isolated Java runtime, RCON, schedule, and network tunnel.</p>
+    </div>
+
+    <!-- Feature 2: Bedrock Crossplay -->
+    <div class="feat-card-v3">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="4" y="2" width="16" height="20" rx="3"/><circle cx="12" cy="18" r="1"/></svg>
+      </div>
+      <h3 data-i18n="feat.c2t">Bedrock Crossplay with Geyser</h3>
+      <p data-i18n="feat.c2d">Automatically detect Geyser and Floodgate configuration errors and apply 1-click fixes with file backups. Opens a secondary UDP tunnel for phone and console players.</p>
+    </div>
+
+    <!-- Feature 3: Interactive Console -->
+    <div class="feat-card-v3">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+      </div>
+      <h3 data-i18n="feat.c3t">Interactive Live Console</h3>
+      <p data-i18n="feat.c3d">Timestamps, log level filters, and search. Player names appearing in console logs are clickable, opening their 3D skin and inventory inspector directly.</p>
+    </div>
+
+    <!-- Feature 4: Automation & Discord -->
+    <div class="feat-card-v3">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h3 data-i18n="feat.c4t">Daily Scheduler &amp; Discord Webhooks</h3>
+      <p data-i18n="feat.c4d">Set daily automatic start/stop times. Post notifications directly to your Discord channel on server boot, graceful stops, unexpected crashes, or player joins.</p>
+    </div>
+
+    <!-- Feature 5: Safe Bulk Updates & Rollback -->
+    <div class="feat-card-v3">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 2v6h-6M3 12a9 9 0 0115-6.7L21 8M3 22v-6h6M21 12a9 9 0 01-15 6.7L3 16"/></svg>
+      </div>
+      <h3 data-i18n="feat.c5t">Bulk Mod Updates &amp; Rollback (6.1.0)</h3>
+      <p data-i18n="feat.c5d">Update installed mods and plugins in batches across Modrinth and Hangar. Automatically snapshots replaced files with 1-click rollback if a new build causes instability.</p>
+    </div>
+
+    <!-- Feature 6: Long-term Performance -->
+    <div class="feat-card-v3">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+      </div>
+      <h3 data-i18n="feat.c6t">Historical Metrics &amp; JVM Presets</h3>
+      <p data-i18n="feat.c6d">Time series graphs for TPS, MSPT, and RAM persisted to disk from 15 minutes up to 30 days. Includes 1-click JVM optimization flags (Aikar's flags, G1GC tuning, ZGC).</p>
+    </div>
+
+    <!-- Feature 7: Properties History & Diff -->
+    <div class="feat-card-v3">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <h3 data-i18n="feat.c7t">Config Snapshots &amp; Line Diff</h3>
+      <p data-i18n="feat.c7d">A snapshot is automatically saved before every edit to server.properties. Compare line diffs visually and restore any previous revision in one click.</p>
+    </div>
+
+    <!-- Feature 8: Headless CLI & Docker -->
+    <div class="feat-card-v3">
+      <div class="fc-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <h3 data-i18n="feat.c8t">Headless CLI &amp; Docker Export</h3>
+      <p data-i18n="feat.c8d">Run the entire backend with no desktop window using the `observer` CLI (JSON scriptable), or export a ready-to-run Dockerfile and compose file for VPS hosting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAJOR FEATURE: MCP (MODEL CONTEXT PROTOCOL) ============ -->
+<section class="band mcp-showcase-band" id="mcp">
+  <div class="mcp-container">
+    <div class="band-head text-center">
+      <div class="mcp-badge">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+        <span>STANDOUT CAPABILITY</span>
+      </div>
+      <h2 data-i18n="mcp.title">Full Model Context Protocol (MCP) Integration</h2>
+      <p class="band-sub" data-i18n="mcp.sub">ObserverLauncher exposes 76 specialized server management tools through a local MCP server. Connect Claude Desktop, ChatGPT, or Cursor to control, diagnose, and automate your server with natural language.</p>
+    </div>
+
+    <div class="mcp-grid">
+      <!-- MCP Feature 1: Server Doctor -->
+      <div class="mcp-card">
+        <div class="mcp-card-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <span class="mcp-tag" data-i18n="mcp.c1tag">Autonomous Doctor</span>
+        <h3 data-i18n="mcp.c1t">Server Doctor &amp; Crash Analyzer</h3>
+        <p data-i18n="mcp.c1d">The AI executes `diagnose_server`, `explain_crash`, and `propose_fix` to scan console buffers, identify root causes of crashes or memory leaks, and propose actionable, structured fix plans.</p>
+      </div>
+
+      <!-- MCP Feature 2: Smart Modpack Planner -->
+      <div class="mcp-card">
+        <div class="mcp-card-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <span class="mcp-tag" data-i18n="mcp.c2tag">Conversational Modding</span>
+        <h3 data-i18n="mcp.c2t">Modpack Planning &amp; Dependency Resolution</h3>
+        <p data-i18n="mcp.c2d">Search Modrinth, Hangar, SpigotMC, and CurseForge through conversational prompts. Tools like `plan_modpack` and `assemble_modpack` resolve dependencies and catch conflicts before installation.</p>
+      </div>
+
+      <!-- MCP Feature 3: Safe Batch Updates -->
+      <div class="mcp-card">
+        <div class="mcp-card-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 18v-6M9 15l3-3 3 3"/></svg>
+        </div>
+        <span class="mcp-tag" data-i18n="mcp.c3tag">Content Lifecyle</span>
+        <h3 data-i18n="mcp.c3t">Smart Updates &amp; Automated Rollbacks</h3>
+        <p data-i18n="mcp.c3d">Ask your AI: "Check for mod updates". It scans project registries with `check_updates`, applies batch updates via `update_content`, and can execute `rollback_content_update` if needed.</p>
+      </div>
+
+      <!-- MCP Feature 4: Three-tier Security -->
+      <div class="mcp-card">
+        <div class="mcp-card-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <span class="mcp-tag" data-i18n="mcp.c4tag">Privacy &amp; Safety</span>
+        <h3 data-i18n="mcp.c4t">Three-Tier Safety &amp; PII Scrubbing</h3>
+        <p data-i18n="mcp.c4d">Strict separation of `read` (free), `write` (UI confirmation), and `destroy` (always prompt). IPv4 addresses and emails are scrubbed before sending logs to AI models, and all actions are recorded in an audit log.</p>
+      </div>
+    </div>
+
+    <!-- MCP Config Snippet -->
+    <div class="mcp-config-box">
+      <div class="mcp-config-header">
+        <div class="mcp-cfg-label">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span data-i18n="mcp.cfgTitle">Connect to Claude Desktop in claude_desktop_config.json</span>
+        </div>
+        <span class="mcp-cfg-hint" data-i18n="mcp.cfgHint">Token is copied from Settings &gt; MCP</span>
+      </div>
+      <pre><code>{
+  "mcpServers": {
+    "observerlauncher": {
+      "command": "node",
+      "args": ["C:/Users/.../ObserverLauncher/src/mcp/bridge.js"],
+      "env": { "OBSERVER_MCP_TOKEN": "your-session-token" }
+    }
+  }
+}</code></pre>
     </div>
   </div>
 </section>
@@ -374,41 +535,6 @@
   </div>
 </section>
 
-<!-- ============ POWER FEATURE: AI ASSISTANT ============ -->
-<section class="band ai-section" id="ai">
-  <div class="ai-box">
-    <div class="ai-text">
-      <p class="eyebrow"><span class="eyebrow-tick"></span><span data-i18n="ai.eyebrow">OPTIONAL SUPERPOWER</span></p>
-      <h2 data-i18n="ai.title">Let an AI assistant handle the technical chores.</h2>
-      <p class="ai-lead" data-i18n="ai.lead">ObserverLauncher acts as a local MCP (Model Context Protocol) server. Hook it up to Claude Desktop, ChatGPT, or Cursor to troubleshoot crashes and manage modpacks through simple conversation.</p>
-      
-      <div class="ai-perks">
-        <div class="ai-perk">
-          <div class="perk-icon">🩺</div>
-          <div>
-            <b data-i18n="ai.p1t">Server Crash Doctor</b>
-            <p data-i18n="ai.p1d">When a server stops unexpectedly, ask your AI: "Why did the server crash?" It reads the latest logs, points out the conflicting mod, and suggests the fix.</p>
-          </div>
-        </div>
-        <div class="ai-perk">
-          <div class="perk-icon">📦</div>
-          <div>
-            <b data-i18n="ai.p2t">Natural Language Modpack Setup</b>
-            <p data-i18n="ai.p2d">Say: "Install Create and optimization mods for Fabric 1.21.1." The AI searches Modrinth, verifies compatibility, and prepares installation for your confirmation.</p>
-          </div>
-        </div>
-        <div class="ai-perk">
-          <div class="perk-icon">🔒</div>
-          <div>
-            <b data-i18n="ai.p3t">Local &amp; Secure by Design</b>
-            <p data-i18n="ai.p3d">Runs exclusively on 127.0.0.1 with random tokens generated per session. Any write or destructive actions require explicit user approval.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ TRUST & FAQ ============ -->
 <section class="band faq-band" id="faq">
   <div class="band-head text-center">
@@ -417,27 +543,35 @@
     <p class="band-sub" data-i18n="faq.sub">Everything you need to know about hosting locally with ObserverLauncher.</p>
   </div>
 
-  <!-- Trust badges -->
+  <!-- Trust badges with SVG icons (no emojis) -->
   <div class="trust-grid">
     <div class="trust-card">
-      <span class="trust-icon">🏠</span>
-      <b data-i18n="trust.t1">100% Local</b>
-      <p data-i18n="trust.d1">Your worlds, configs, and player data never leave your PC.</p>
+      <div class="trust-svg-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <b data-i18n="trust.t1">Local Execution</b>
+      <p data-i18n="trust.d1">Your worlds, configs, and player data stay directly on your PC.</p>
     </div>
     <div class="trust-card">
-      <span class="trust-icon">🔓</span>
+      <div class="trust-svg-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="18" y1="8" x2="23" y2="13"/><line x1="23" y1="8" x2="18" y2="13"/></svg>
+      </div>
       <b data-i18n="trust.t2">No Account Needed</b>
-      <p data-i18n="trust.d2">No registration, no emails, no logins, no cloud lock-in.</p>
+      <p data-i18n="trust.d2">No registration, no emails, no passwords, and no cloud lock-in.</p>
     </div>
     <div class="trust-card">
-      <span class="trust-icon">🛡️</span>
-      <b data-i18n="trust.t3">Zero Telemetry</b>
-      <p data-i18n="trust.d3">No background tracking, no analytics, no advertisements.</p>
+      <div class="trust-svg-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <b data-i18n="trust.t3">No Telemetry</b>
+      <p data-i18n="trust.d3">No background tracking, analytics, or third-party ads.</p>
     </div>
     <div class="trust-card">
-      <span class="trust-icon">⚡</span>
-      <b data-i18n="trust.t4">Zero Idle Drain</b>
-      <p data-i18n="trust.d4">Closing the app releases 100% of memory and CPU instantly.</p>
+      <div class="trust-svg-icon">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </div>
+      <b data-i18n="trust.t4">Clean Shutdown</b>
+      <p data-i18n="trust.d4">Closing the application leaves no background daemon processes.</p>
     </div>
   </div>
 
@@ -445,12 +579,12 @@
   <div class="faq-accordion">
     <details class="faq-item" open>
       <summary><span data-i18n="faq.q1">Do I have to pay anything to host a server?</span><svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-      <div class="faq-answer"><p data-i18n="faq.a1">No, ObserverLauncher is 100% free and open-source under the Apache-2.0 license. The server runs directly on your computer hardware, meaning there are no subscriptions or monthly hosting bills.</p></div>
+      <div class="faq-answer"><p data-i18n="faq.a1">No, ObserverLauncher is free and open-source under the Apache-2.0 license. The server runs directly on your computer hardware, meaning there are no subscriptions or monthly hosting bills.</p></div>
     </details>
 
     <details class="faq-item">
       <summary><span data-i18n="faq.q2">Can friends on phones (Minecraft Bedrock) join my Java server?</span><svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
-      <div class="faq-answer"><p data-i18n="faq.a2">Yes! ObserverLauncher provides 1-click Bedrock crossplay support using GeyserMC. Mobile, console, and PC players can join and play together in the same survival world seamlessly.</p></div>
+      <div class="faq-answer"><p data-i18n="faq.a2">Yes! ObserverLauncher provides 1-click Bedrock crossplay support using GeyserMC and Floodgate. Mobile, console, and PC players can join and play together in the same survival world seamlessly.</p></div>
     </details>
 
     <details class="faq-item">
@@ -459,7 +593,7 @@
     </details>
 
     <details class="faq-item">
-      <summary><span data-i18n="faq.q4">Will running a server make my computer laggy when I am not playing?</span><svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+      <summary><span data-i18n="faq.q4">Will running a server make my computer laggy when I am not playing?</span><svg class="faq-chevron chevron" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
       <div class="faq-answer"><p data-i18n="faq.a4">Not at all. When you press Stop or close ObserverLauncher, all server processes terminate cleanly. No background daemons or services stay running on your computer.</p></div>
     </details>
   </div>
