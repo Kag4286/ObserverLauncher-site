@@ -158,7 +158,6 @@
           <span class="dot min"></span>
           <span class="dot max"></span>
         </div>
-        <span class="window-title">ObserverLauncher 6.1.0 — Minecraft 1.21.4 (Paper)</span>
         <span class="window-live"><span class="live-dot"></span> LIVE</span>
       </div>
       <div class="window-content">
@@ -234,19 +233,19 @@
   </div>
 
   <div class="showcase-tabs" role="tablist" aria-label="Feature showcase tabs">
-    <button class="showcase-tab active" role="tab" aria-selected="true" aria-controls="panel-overview" id="tab-overview" data-tab="overview">
+    <button type="button" class="showcase-tab active" role="tab" aria-selected="true" aria-controls="panel-overview" id="tab-overview" data-tab="overview">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2 6 4-14 2 8h6"/></svg>
       <span data-i18n="showcase.tab1">Overview &amp; Control</span>
     </button>
-    <button class="showcase-tab" role="tab" aria-selected="false" aria-controls="panel-players" id="tab-players" data-tab="players">
+    <button type="button" class="showcase-tab" role="tab" aria-selected="false" aria-controls="panel-players" id="tab-players" data-tab="players">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a7 7 0 0114 0v2"/></svg>
       <span data-i18n="showcase.tab2">3D Player Inspector</span>
     </button>
-    <button class="showcase-tab" role="tab" aria-selected="false" aria-controls="panel-map" id="tab-map" data-tab="map">
+    <button type="button" class="showcase-tab" role="tab" aria-selected="false" aria-controls="panel-map" id="tab-map" data-tab="map">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>
       <span data-i18n="showcase.tab3">Live World Map</span>
     </button>
-    <button class="showcase-tab" role="tab" aria-selected="false" aria-controls="panel-ai" id="tab-ai" data-tab="ai">
+    <button type="button" class="showcase-tab" role="tab" aria-selected="false" aria-controls="panel-ai" id="tab-ai" data-tab="ai">
       <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg>
       <span data-i18n="showcase.tab4">AI / MCP Settings</span>
     </button>
@@ -267,7 +266,7 @@
           </ul>
         </div>
         <div class="panel-visual">
-          <img src="./assets/shots/overview.png" width="1920" height="1080" alt="ObserverLauncher Overview Tab" loading="lazy">
+          <img src="./assets/shots/overview.png" width="1920" height="1080" alt="ObserverLauncher Overview Tab" loading="eager" decoding="async">
         </div>
       </div>
     </div>
@@ -286,8 +285,8 @@
           </ul>
         </div>
         <div class="panel-visual dual-visual">
-          <img src="./assets/shots/player-inspector.png" width="1920" height="1080" alt="Player 3D Inspector" loading="lazy">
-          <img src="./assets/shots/inventory.png" width="1918" height="1079" alt="Player Inventory Grid" loading="lazy">
+          <img src="./assets/shots/player-inspector.png" width="1920" height="1080" alt="Player 3D Inspector" loading="eager" decoding="async">
+          <img src="./assets/shots/inventory.png" width="1918" height="1079" alt="Player Inventory Grid" loading="eager" decoding="async">
         </div>
       </div>
     </div>
@@ -306,7 +305,7 @@
           </ul>
         </div>
         <div class="panel-visual">
-          <img src="./assets/shots/worldmap.png" width="1920" height="1080" alt="Live World Map" loading="lazy">
+          <img src="./assets/shots/worldmap.png" width="1920" height="1080" alt="Live World Map" loading="eager" decoding="async">
         </div>
       </div>
     </div>
@@ -325,7 +324,7 @@
           </ul>
         </div>
         <div class="panel-visual">
-          <img src="./assets/shots/MCP.png" width="1918" height="1080" alt="AI and MCP Settings" loading="lazy">
+          <img src="./assets/shots/MCP.png" width="1918" height="1080" alt="AI and MCP Settings" loading="eager" decoding="async">
         </div>
       </div>
     </div>
@@ -502,35 +501,35 @@
   <div class="soft-grid-v2">
     <div class="soft-item">
       <div class="soft-head"><b>Paper</b><span class="tag-rec">Recommended</span></div>
-      <p>High performance server with extensive plugin support for community play.</p>
+      <p data-i18n="soft.paper">High performance server with extensive plugin support for community play.</p>
     </div>
     <div class="soft-item">
       <div class="soft-head"><b>Fabric</b><span class="tag-mod">Modded</span></div>
-      <p>Lightweight and modular modding engine, fast updates for latest Minecraft versions.</p>
+      <p data-i18n="soft.fabric">Lightweight and modular modding engine, fast updates for latest Minecraft versions.</p>
     </div>
     <div class="soft-item">
-      <div class="soft-head"><b>Forge</b><span class="tag-mod">Modded</span></div>
-      <p>The classic ecosystem for massive modpacks with hundreds of mods.</p>
+      <div class="soft-head"><b>Forge &amp; NeoForge</b><span class="tag-mod">Modded</span></div>
+      <p data-i18n="soft.forge">Massive mod ecosystems supporting rich modpacks with complex game mechanics.</p>
     </div>
     <div class="soft-item">
-      <div class="soft-head"><b>NeoForge</b><span class="tag-mod">Modded</span></div>
-      <p>The modern, community-driven continuation of the Forge modding platform.</p>
+      <div class="soft-head"><b>Purpur</b><span class="tag-perf">Gameplay</span></div>
+      <p data-i18n="soft.purpur">Drop-in replacement for Paper with enhanced gameplay configurability and performance.</p>
     </div>
     <div class="soft-item">
-      <div class="soft-head"><b>Purpur</b><span class="tag-perf">Ultra TPS</span></div>
-      <p>Drop-in replacement for Paper with enhanced gameplay configurability and speed.</p>
+      <div class="soft-head"><b>Leaf</b><span class="tag-perf">Ultra Performance</span></div>
+      <p data-i18n="soft.leaf">High-performance fork of Paper focused on optimal server efficiency, vanilla bug fixes, and stability.</p>
     </div>
     <div class="soft-item">
-      <div class="soft-head"><b>Vanilla</b><span class="tag-vanilla">Official</span></div>
-      <p>The original, unmodded Minecraft server directly from Mojang Studios.</p>
-    </div>
-    <div class="soft-item">
-      <div class="soft-head"><b>Folia &amp; Leaf</b><span class="tag-perf">Multi-thread</span></div>
-      <p>Cutting-edge multithreaded servers designed for massive player counts.</p>
+      <div class="soft-head"><b>Folia</b><span class="tag-multithread">Regionized Threading</span></div>
+      <p data-i18n="soft.folia">Experimental Paper fork featuring regionized multithreading for high concurrent player counts.</p>
     </div>
     <div class="soft-item">
       <div class="soft-head"><b>Velocity &amp; Spigot</b><span class="tag-proxy">Network</span></div>
-      <p>High-speed proxy networking and classic craftbukkit plugin foundations.</p>
+      <p data-i18n="soft.velocity">High-speed proxy networking and classic craftbukkit plugin foundations.</p>
+    </div>
+    <div class="soft-item">
+      <div class="soft-head"><b>Vanilla</b><span class="tag-vanilla">Official</span></div>
+      <p data-i18n="soft.vanilla">The original, unmodded Minecraft server directly from Mojang Studios.</p>
     </div>
   </div>
 </section>

@@ -65,6 +65,14 @@
     'mcp.cfgTitle':'Connect to Claude Desktop in claude_desktop_config.json','mcp.cfgHint':'Token is copied from Settings > MCP',
 
     'soft.eyebrow':'COMPATIBILITY','soft.title':'Runs all your favorite server software.','soft.sub':'Version lists load live from official project repositories so new Minecraft releases are available instantly.',
+    'soft.paper':'High performance server with extensive plugin support for community play.',
+    'soft.fabric':'Lightweight and modular modding engine, fast updates for latest Minecraft versions.',
+    'soft.forge':'Massive mod ecosystems supporting rich modpacks with complex game mechanics.',
+    'soft.purpur':'Drop-in replacement for Paper with enhanced gameplay configurability and performance.',
+    'soft.leaf':'High-performance fork of Paper focused on optimal server efficiency, vanilla bug fixes, and stability.',
+    'soft.folia':'Experimental Paper fork featuring regionized multithreading for high concurrent player counts.',
+    'soft.velocity':'High-speed proxy networking and classic craftbukkit plugin foundations.',
+    'soft.vanilla':'The original, unmodded Minecraft server directly from Mojang Studios.',
 
     'faq.eyebrow':'HONEST & TRANSPARENT','faq.title':'Frequently Asked Questions','faq.sub':'Everything you need to know about hosting locally with ObserverLauncher.',
     'trust.t1':'Local Execution','trust.d1':'Your worlds, configs, and player data stay directly on your PC.',
@@ -145,6 +153,14 @@
     'mcp.cfgTitle':'Cấu hình thêm vào Claude Desktop trong claude_desktop_config.json','mcp.cfgHint':'Lấy token tại Cài đặt > MCP trong ứng dụng',
 
     'soft.eyebrow':'TƯƠNG THÍCH ĐA DẠNG','soft.title':'Hỗ trợ mọi loại server bạn muốn.','soft.sub':'Danh sách phiên bản cập nhật tự động từ nguồn chính thức của Mojang, PaperMC, Fabric và Forge.',
+    'soft.paper':'Server hiệu năng cao với kho plugin khổng lồ cho các cộng đồng.',
+    'soft.fabric':'Nền tảng mod nhẹ và dạng mô-đun, cập nhật nhanh cho các bản Minecraft mới.',
+    'soft.forge':'Hệ sinh thái mod kinh điển cho các gói modpack lớn với cơ chế phức tạp.',
+    'soft.purpur':'Bản thay thế trực tiếp cho Paper với khả năng tinh chỉnh gameplay và tối ưu tốc độ.',
+    'soft.leaf':'Bản fork của Paper chuyên tối ưu hóa cực mạnh về hiệu năng của server, sửa lỗi vanilla và tăng cường độ ổn định.',
+    'soft.folia':'Bản fork của Paper sử dụng kiến trúc đa luồng theo vùng (regionized multithreading) cho các server có lượng người chơi lớn.',
+    'soft.velocity':'Hệ thống proxy tốc độ cao và nền tảng plugin CraftBukkit truyền thống.',
+    'soft.vanilla':'Máy chủ Minecraft nguyên bản không mod trực tiếp từ Mojang Studios.',
 
     'faq.eyebrow':'MINH BẠCH & RÕ RÀNG','faq.title':'Câu hỏi thường gặp','faq.sub':'Những điều bạn cần biết khi tự mở server Minecraft với ObserverLauncher.',
     'trust.t1':'Chạy trực tiếp trên máy','trust.d1':'File thế giới, cấu hình và dữ liệu không bao giờ rời khỏi PC của bạn.',
@@ -225,6 +241,14 @@
     'mcp.cfgTitle':'Configuración para Claude Desktop en claude_desktop_config.json','mcp.cfgHint':'Copia el token en Ajustes > MCP de la aplicación',
 
     'soft.eyebrow':'COMPATIBILIDAD','soft.title':'Soporta todos tus programas de servidor favoritos.','soft.sub':'Las listas de versiones cargan directamente desde los repositorios oficiales.',
+    'soft.paper':'Servidor de alto rendimiento con amplio soporte de plugins para comunidades.',
+    'soft.fabric':'Motor de modding modular y ligero, rápido de actualizar a las últimas versiones.',
+    'soft.forge':'Ecosistema clásico para grandes paquetes de mods con mecánicas complejas.',
+    'soft.purpur':'Reemplazo directo de Paper con mayor personalización de mecánicas y rendimiento.',
+    'soft.leaf':'Bifurcación de Paper enfocada en optimización extrema de rendimiento, corrección de bugs vanilla y estabilidad.',
+    'soft.folia':'Bifurcación experimental de Paper con multihilo regional para grandes cantidades de jugadores.',
+    'soft.velocity':'Redes proxy de alta velocidad y bases clásicas de plugins Bukkit.',
+    'soft.vanilla':'Servidor original sin modificaciones directamente de Mojang Studios.',
 
     'faq.eyebrow':'TRANSPARENTE','faq.title':'Preguntas Frecuentes','faq.sub':'Todo lo que necesitas saber sobre ObserverLauncher.',
     'trust.t1':'Ejecución Local','trust.d1':'Tus mundos y configuraciones se quedan directamente en tu PC.',
@@ -305,6 +329,14 @@
     'mcp.cfgTitle':'Configuração para Claude Desktop em claude_desktop_config.json','mcp.cfgHint':'Copie o token em Configurações > MCP no aplicativo',
 
     'soft.eyebrow':'COMPATIBILIDADE','soft.title':'Roda todos os seus softwares de servidor favoritos.','soft.sub':'Versões carregadas em tempo real dos repositórios oficiais.',
+    'soft.paper':'Servidor de alto desempenho com amplo suporte a plugins para comunidades.',
+    'soft.fabric':'Motor de mods modular e leve, com atualizações rápidas para novas versões.',
+    'soft.forge':'Ecossistema clássico para grandes modpacks com mecânicas complexas.',
+    'soft.purpur':'Substituto direto do Paper com maior personalização de gameplay e velocidade.',
+    'soft.leaf':'Fork do Paper focado em otimização extrema de desempenho do servidor, correções vanilla e estabilidade.',
+    'soft.folia':'Fork experimental do Paper com multithreading regionalizado para grande volume de jogadores.',
+    'soft.velocity':'Rede de proxies de alta velocidade e fundações clássicas de plugins Bukkit.',
+    'soft.vanilla':'Servidor original sem mods diretamente da Mojang Studios.',
 
     'faq.eyebrow':'TRANSPARÊNCIA','faq.title':'Perguntas Frequentes','faq.sub':'Tudo o que você precisa saber sobre o ObserverLauncher.',
     'trust.t1':'Execução Local','trust.d1':'Seus mundos e configurações ficam diretamente no seu computador.',
@@ -385,6 +417,14 @@
     'mcp.cfgTitle':'Konfiguration für Claude Desktop in claude_desktop_config.json','mcp.cfgHint':'Token unter Einstellungen > MCP in der App kopieren',
 
     'soft.eyebrow':'KOMPATIBILITÄT','soft.title':'Unterstützt deine Lieblings-Serversoftware.','soft.sub':'Versionslisten laden direkt von den offiziellen Repositories.',
+    'soft.paper':'Hochleistungsserver mit breiter Plugin-Unterstützung für Communitys.',
+    'soft.fabric':'Leichte und modulare Modding-Engine mit schnellen Updates für neue Versionen.',
+    'soft.forge':'Das klassische Ökosystem für umfangreiche Modpacks mit komplexen Mechaniken.',
+    'soft.purpur':'Direkter Ersatz für Paper mit erweiterten Gameplay-Einstellungen und hoher Leistung.',
+    'soft.leaf':'Paper-Fork mit Fokus auf extreme Server-Performance-Optimierung, Vanilla-Fehlerbehebungen und Stabilität.',
+    'soft.folia':'Experimenteller Paper-Fork mit regionalisiertem Multithreading für sehr hohe Spielerzahlen.',
+    'soft.velocity':'Hochgeschwindigkeits-Proxy-Netzwerke und klassische Bukkit-Plugin-Grundlagen.',
+    'soft.vanilla':'Der originale, ungemoddete Minecraft-Server direkt von Mojang Studios.',
 
     'faq.eyebrow':'TRANSPARENT','faq.title':'Häufig gestellte Fragen','faq.sub':'Alles Wissenswerte über ObserverLauncher.',
     'trust.t1':'Lokale Ausführung','trust.d1':'Deine Welten und Einstellungen bleiben direkt auf deinem PC.',
@@ -465,6 +505,14 @@
     'mcp.cfgTitle':'Конфигурация для Claude Desktop в claude_desktop_config.json','mcp.cfgHint':'Скопируйте токен в Настройки > MCP в приложении',
 
     'soft.eyebrow':'СОВМЕСТИМОСТЬ','soft.title':'Поддерживает все популярные ядра.','soft.sub':'Списки версий загружаются напрямую из официальных источников.',
+    'soft.paper':'Высокопроизводительный сервер с огромной поддержкой плагинов для сообществ.',
+    'soft.fabric':'Легковесный модульный движок модов с быстрыми обновлениями под новые версии.',
+    'soft.forge':'Классическая экосистема для масштабных сборок модов со сложными механиками.',
+    'soft.purpur':'Прямая замена Paper с расширенной настройкой геймплея и высокой скоростью.',
+    'soft.leaf':'Форк Paper, нацеленный на экстремальную оптимизацию производительности сервера, исправление багов ваниллы и стабильность.',
+    'soft.folia':'Экспериментальный форк Paper с региональной многопоточностью для огромного онлайна.',
+    'soft.velocity':'Высокоскоростная прокси-сеть и классическая база плагинов Bukkit.',
+    'soft.vanilla':'Оригинальный чистый сервер Minecraft напрямую от Mojang Studios.',
 
     'faq.eyebrow':'ПРОЗРАЧНОСТЬ','faq.title':'Часто задаваемые вопросы','faq.sub':'Всё, что нужно знать о запуске сервера через ObserverLauncher.',
     'trust.t1':'Локальный запуск','trust.d1':'Файлы миров и настройки хранятся исключительно на вашем ПК.',
@@ -545,6 +593,14 @@
     'mcp.cfgTitle':'添加至 Claude Desktop 的 claude_desktop_config.json','mcp.cfgHint':'在软件设置 > MCP 中复制专用令牌',
 
     'soft.eyebrow':'兼容性','soft.title':'支持所有你喜爱的服务端核心。','soft.sub':'版本列表直接同步官方源，Minecraft 官方发布新版本后即刻支持。',
+    'soft.paper':'高性能服务器核心，具有庞大的社区插件生态支持。',
+    'soft.fabric':'轻量模块化模组引擎，快速适配最新 Minecraft 版本。',
+    'soft.forge':'经典模组生态系统，完美支持拥有复杂玩法的大型整合包。',
+    'soft.purpur':'Paper 的直接替代品，提供更丰富的游戏机制调节与性能优化。',
+    'soft.leaf':'专为极限性能优化打造的 Paper 分支，专注于极致服务端效率、原版漏洞修复与高稳定性。',
+    'soft.folia':'基于区域多线程架构的实验性 Paper 分支，专为超大规模玩家并发设计。',
+    'soft.velocity':'超高速跨服代理网络与经典 Bukkit 插件底层架构。',
+    'soft.vanilla':'来自 Mojang Studios 官方的原生纯净版 Minecraft 服务器。',
 
     'faq.eyebrow':'透明公开','faq.title':'常见问题解答','faq.sub':'关于使用 ObserverLauncher 本地开服你所关心的事。',
     'trust.t1':'本地独立运行','trust.d1':'世界存档与配置数据直接保存在你的电脑上。',

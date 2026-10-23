@@ -9,42 +9,49 @@
     const panels=$$('.showcase-panel');
     if(!tabs.length||!panels.length) return;
 
-    function selectTab(targetTab){
-      const panelId=targetTab.getAttribute('aria-controls');
-      const targetPanel=$('#'+panelId);
+    function selectTab(targetTab, e){
+      if(e && typeof e.preventDefault === 'function') e.preventDefault();
+      const currentScroll = window.scrollY;
+      const panelId = targetTab.getAttribute('aria-controls');
+      const targetPanel = $('#' + panelId);
       if(!targetPanel) return;
 
       tabs.forEach(t=>{
-        const isCurrent=(t===targetTab);
+        const isCurrent = (t === targetTab);
         t.classList.toggle('active', isCurrent);
         t.setAttribute('aria-selected', String(isCurrent));
       });
 
       panels.forEach(p=>{
-        if(p===targetPanel){
-          p.hidden=false;
-          requestAnimationFrame(()=>p.classList.add('active'));
+        if(p === targetPanel){
+          p.hidden = false;
+          requestAnimationFrame(() => p.classList.add('active'));
         } else {
           p.classList.remove('active');
-          p.hidden=true;
+          p.hidden = true;
         }
       });
+
+      // Guard against browser scroll anchoring jumping to bottom of page
+      if(Math.abs(window.scrollY - currentScroll) > 1){
+        window.scrollTo({ top: currentScroll, behavior: 'instant' });
+      }
     }
 
     tabs.forEach(tab=>{
-      tab.addEventListener('click',()=>selectTab(tab));
-      tab.addEventListener('keydown',e=>{
-        const idx=tabs.indexOf(tab);
-        if(e.key==='ArrowRight'||e.key==='ArrowDown'){
+      tab.addEventListener('click', e => selectTab(tab, e));
+      tab.addEventListener('keydown', e => {
+        const idx = tabs.indexOf(tab);
+        if(e.key === 'ArrowRight' || e.key === 'ArrowDown'){
           e.preventDefault();
-          const next=tabs[(idx+1)%tabs.length];
+          const next = tabs[(idx + 1) % tabs.length];
           next.focus();
-          selectTab(next);
-        } else if(e.key==='ArrowLeft'||e.key==='ArrowUp'){
+          selectTab(next, e);
+        } else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){
           e.preventDefault();
-          const prev=tabs[(idx-1+tabs.length)%tabs.length];
+          const prev = tabs[(idx - 1 + tabs.length) % tabs.length];
           prev.focus();
-          selectTab(prev);
+          selectTab(prev, e);
         }
       });
     });
