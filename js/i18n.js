@@ -17,7 +17,7 @@
     'cta.download':'Download','cta.getStarted':'Download ObserverLauncher','cta.github':'View on GitHub',
 
     'hero.badge':'Release 6.1.0 • Free & Open Source',
-    'hero.title':'Host your Minecraft server in 60 seconds.<br>No terminal required.',
+    'hero.title':'Host your Minecraft server in 60 seconds. <br>No terminal required.',
     'hero.lead':'ObserverLauncher handles Java runtimes, firewall rules, and server configurations automatically. Share a link with your friends through built-in tunnels without touching your router.',
     'hero.fact1':'No account needed','hero.fact2':'Runs locally on your PC','hero.fact3':'No telemetry or tracking','hero.fact4':'Windows & Linux',
 
@@ -105,7 +105,7 @@
     'cta.download':'Tải về','cta.getStarted':'Tải ObserverLauncher','cta.github':'Xem trên GitHub',
 
     'hero.badge':'Phiên bản 6.1.0 • Miễn phí & Mã nguồn mở',
-    'hero.title':'Mở server Minecraft riêng trong 60 giây.<br>Không cần chạm vào dòng lệnh.',
+    'hero.title':'Mở server Minecraft riêng trong 60 giây. <br>Không cần chạm vào dòng lệnh.',
     'hero.lead':'ObserverLauncher tự động tải Java, cấu hình server và mở firewall. Mời bạn bè tham gia qua đường truyền Tunnel tích hợp mà không cần mở port modem.',
     'hero.fact1':'Không cần tài khoản','hero.fact2':'Chạy trực tiếp trên máy bạn','hero.fact3':'Không theo dõi hay thu thập dữ liệu','hero.fact4':'Hỗ trợ Windows & Linux',
 
@@ -116,7 +116,7 @@
     'why.c4tag':'Trực quan & Yên tâm','why.c4t':'Soi đồ người chơi 3D & Sao lưu 1 chạm','why.c4d':'Xem skin 3D và túi đồ của bạn bè trong server, xem bản đồ vệ tinh live. Tự động sao lưu file thế giới thành file ZIP an toàn để phục hồi bất cứ lúc nào.',
 
     'showcase.eyebrow':'TRẢI NGHIỆM THỰC TẾ','showcase.title':'Thiết kế cho người chơi, không phải cho quản trị viên máy chủ.','showcase.sub':'Mọi tính năng quan trọng đều hiển thị trực quan và dễ thao tác.',
-    'showcase.tab1':'Tổng quan & Quản lý','showcase.tab2':'Soi người chơi & Túi đồ 3D','showcase.tab3':'Bản đồ thế giới Live','showcase.tab4':'Cài đặt AI & MCP',
+    'showcase.tab1':'Tổng quan & Quản lý','showcase.tab2':'Soi người chơi 3D','showcase.tab3':'Bản đồ thế giới Live','showcase.tab4':'Cài đặt AI & MCP',
     'showcase.p1tag':'Bảng điều khiển trực quan','showcase.p1t':'Nắm bắt tình trạng server trong chớp mắt','showcase.p1d':'Biểu đồ TPS, MSPT, RAM và CPU thời gian thực. Cảnh báo thông minh bằng tiếng người khi server có dấu hiệu lag hoặc tràn bộ nhớ. Một nút bật, tắt hoặc khởi động lại.',
     'showcase.p1b1':'Bật và tắt server tức thì với cơ chế tự động lưu world',
     'showcase.p1b2':'Biểu đồ RAM và tick-rate kèm chẩn đoán nguyên nhân gây lag',
@@ -193,7 +193,7 @@
     'cta.download':'Descargar','cta.getStarted':'Descargar ObserverLauncher','cta.github':'Ver en GitHub',
 
     'hero.badge':'Versión 6.1.0 • Gratis y Código Abierto',
-    'hero.title':'Crea tu servidor de Minecraft en 60 segundos.<br>Sin comandos de terminal.',
+    'hero.title':'Crea tu servidor de Minecraft en 60 segundos. <br>Sin comandos de terminal.',
     'hero.lead':'ObserverLauncher gestiona Java, reglas de firewall y archivos de configuración automáticamente. Invita a tus amigos con túneles integrados sin abrir puertos en tu router.',
     'hero.fact1':'Sin cuenta','hero.fact2':'Ejecución local en tu PC','hero.fact3':'Sin telemetría ni rastreo','hero.fact4':'Windows y Linux',
 
@@ -281,7 +281,7 @@
     'cta.download':'Baixar','cta.getStarted':'Baixar ObserverLauncher','cta.github':'Ver no GitHub',
 
     'hero.badge':'Versão 6.1.0 • Grátis e Código Aberto',
-    'hero.title':'Crie seu servidor de Minecraft em 60 segundos.<br>Sem comandos de terminal.',
+    'hero.title':'Crie seu servidor de Minecraft em 60 segundos. <br>Sem comandos de terminal.',
     'hero.lead':'O ObserverLauncher cuida de Java, firewall e configurações automaticamente. Chame seus amigos com túneis integrados sem mexer no roteador.',
     'hero.fact1':'Sem conta','hero.fact2':'Execução local no seu PC','hero.fact3':'Sem telemetria ou rastreamento','hero.fact4':'Windows e Linux',
 
@@ -369,7 +369,7 @@
     'cta.download':'Download','cta.getStarted':'ObserverLauncher herunterladen','cta.github':'Auf GitHub ansehen',
 
     'hero.badge':'Version 6.1.0 • Kostenlos & Open Source',
-    'hero.title':'Starte deinen Minecraft-Server in 60 Sekunden.<br>Ganz ohne Terminal.',
+    'hero.title':'Starte deinen Minecraft-Server in 60 Sekunden. <br>Ganz ohne Terminal.',
     'hero.lead':'ObserverLauncher installiert Java, Firewall-Regeln und Konfigurationsdateien automatisch. Teile deinen Server über integrierte Tunnel mit Freunden — ganz ohne Router-Portfreigabe.',
     'hero.fact1':'Kein Account nötig','hero.fact2':'Lokale Ausführung auf deinem PC','hero.fact3':'Keine Telemetrie oder Tracking','hero.fact4':'Windows & Linux',
 
@@ -457,7 +457,7 @@
     'cta.download':'Скачать','cta.getStarted':'Скачать ObserverLauncher','cta.github':'Открыть на GitHub',
 
     'hero.badge':'Версия 6.1.0 • Бесплатно и с открытым кодом',
-    'hero.title':'Запустите сервер Minecraft за 60 секунд.<br>Без командной строки.',
+    'hero.title':'Запустите сервер Minecraft за 60 секунд. <br>Без командной строки.',
     'hero.lead':'ObserverLauncher автоматически настраивает Java, брандмауэр и параметры сервера. Приглашайте друзей через встроенные туннели без настройки роутера.',
     'hero.fact1':'Без аккаунтов','hero.fact2':'Локальный запуск на вашем ПК','hero.fact3':'Без телеметрии и слежки','hero.fact4':'Windows и Linux',
 
@@ -545,7 +545,7 @@
     'cta.download':'下载','cta.getStarted':'下载 ObserverLauncher','cta.github':'在 GitHub 查看',
 
     'hero.badge':'6.1.0 版本 • 免费且开源',
-    'hero.title':'60秒内开好你的 Minecraft 服务器。<br>无需任何终端命令。',
+    'hero.title':'60秒内开好你的 Minecraft 服务器。 <br>无需任何终端命令。',
     'hero.lead':'ObserverLauncher 自动安装匹配的 Java、配置防火墙与服务端参数。内置内网穿透隧道，无需设置路由器端口映射即可邀请好友联机。',
     'hero.fact1':'无需注册账号','hero.fact2':'本地直接运行','hero.fact3':'无后台数据追踪','hero.fact4':'支持 Windows 与 Linux',
 

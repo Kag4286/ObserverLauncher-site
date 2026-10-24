@@ -9,9 +9,14 @@
     const panels=$$('.showcase-panel');
     if(!tabs.length||!panels.length) return;
 
+    panels.forEach(p => {
+      p.removeAttribute('hidden');
+      const isTarget = p.classList.contains('active');
+      p.setAttribute('aria-hidden', String(!isTarget));
+    });
+
     function selectTab(targetTab, e){
       if(e && typeof e.preventDefault === 'function') e.preventDefault();
-      const currentScroll = window.scrollY;
       const panelId = targetTab.getAttribute('aria-controls');
       const targetPanel = $('#' + panelId);
       if(!targetPanel) return;
@@ -23,19 +28,10 @@
       });
 
       panels.forEach(p=>{
-        if(p === targetPanel){
-          p.hidden = false;
-          requestAnimationFrame(() => p.classList.add('active'));
-        } else {
-          p.classList.remove('active');
-          p.hidden = true;
-        }
+        const isTarget = (p === targetPanel);
+        p.classList.toggle('active', isTarget);
+        p.setAttribute('aria-hidden', String(!isTarget));
       });
-
-      // Guard against browser scroll anchoring jumping to bottom of page
-      if(Math.abs(window.scrollY - currentScroll) > 1){
-        window.scrollTo({ top: currentScroll, behavior: 'instant' });
-      }
     }
 
     tabs.forEach(tab=>{
